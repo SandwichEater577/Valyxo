@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SandwichEater577/NovaHub/main/NovaLogo.png" width="200">
+</p>
 ⭐ NovaHub — Terminal OS + Scripting Language + AI Toolkit
 
 A lightweight terminal-based development environment featuring:
