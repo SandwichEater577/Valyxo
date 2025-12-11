@@ -15,9 +15,6 @@ A lightweight terminal-based development environment featuring:
 ![License](https://img.shields.io/github/license/SandwichEater577/NovaHub)
 ![MadeWith](https://img.shields.io/badge/Made%20with-Python%203.13-blue)
 
-
-(Replace this block in your README with the actual badge links if GitHub doesn’t auto-render them.)
-
 🚀 About NovaHub
 
 NovaHub is a fully custom terminal environment and scripting platform, designed to feel like a mix of:
