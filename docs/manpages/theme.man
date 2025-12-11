@@ -1,0 +1,39 @@
+COMMAND: theme
+
+HOW TO USE:
+theme list        # List all available themes
+theme set <name>  # Change to theme
+
+EXAMPLE:
+theme list
+theme set hacker
+theme set ocean
+theme set neon
+
+DESCRIPTION:
+theme manages NovaHub color schemes. Apply different visual themes to
+customize the appearance of the terminal prompt, banner, and text colors.
+
+LANGUAGE:
+System
+
+AVAILABLE THEMES:
+- neon: Green colors (default) - cyberpunk style
+- classic: White colors - clean and bright
+- hacker: Dark green on dark background - retro terminal
+- ocean: Cyan/Blue colors - calm and modern
+
+NOTES:
+- Current theme shown in 'theme list' output
+- Theme preference saved in Config/themes.json
+- Error messages stay red in all themes
+- Changes apply immediately
+- Requires 'colors' setting to be enabled
+
+WARNINGS:
+- Disabling colors setting overrides theme
+- Terminal must support ANSI escape codes
+- Some themes may be hard to read on dark/light terminals
+
+SEE ALSO:
+man settings, man NovaHub

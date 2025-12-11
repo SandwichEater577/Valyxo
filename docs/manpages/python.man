@@ -1,0 +1,41 @@
+COMMAND: python
+
+HOW TO USE:
+python              # Enter Python interactive console
+
+EXAMPLE:
+python
+>>> x = 42
+>>> print(x)
+42
+>>> import os
+>>> os.getcwd()
+>>> exit()
+
+DESCRIPTION:
+python launches an embedded Python interactive console. You have full
+access to Python's standard library and can execute any Python code.
+The console includes pre-loaded NovaHub context variables.
+
+LANGUAGE:
+Python
+
+AVAILABLE VARIABLES:
+- CWD: Current working directory in NovaHub
+- ACTIVE_FILE: Currently active filename (if any)
+- SETTINGS: NovaHub settings dictionary
+
+NOTES:
+- Full Python 3.x standard library available
+- Type 'exit()' or Ctrl+D to return to NovaHub
+- Command history preserved across sessions
+- Can import any standard library module
+- Can define functions and classes
+
+WARNINGS:
+- Changes to global NovaHub state may affect next commands
+- Long-running Python code blocks NovaHub prompt
+- File operations should stay within NovaHub filesystem
+
+SEE ALSO:
+man enter NovaScript, man run, man NovaHub
