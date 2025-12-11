@@ -19,6 +19,7 @@ import difflib
 import ast
 import shutil
 import re
+import shlex
 import atexit
 import code
 import random
@@ -916,21 +917,31 @@ class NovaHubShell:
         if not args:
             print("Usage: mkdir <name> or mkdir \"name\" --LANG")
             return
-        raw = " ".join(args)
-        lang_match = re.search(r"--\s*([A-Za-z0-9_.]+)$", raw)
-        if raw.startswith('"') and raw.endswith('"'):
-            name = raw[1:-1]
+        # args are tokenized by shlex in handle_input_line; join makes no harm if they are tokens from other sources
+        try:
+            tokens = shlex.split(" ".join(args))
+        except Exception:
+            tokens = " ".join(args).strip().split()
+        if not tokens:
+            return
+        # The name may include spaces (quoted by user) so name_tokens are either all tokens except last (if last is --lang) or all tokens
+        lang = None
+        if len(tokens) > 1 and tokens[-1].startswith("--"):
+            lang = tokens[-1].lstrip("-")
+            name_tokens = tokens[:-1]
         else:
-            parts = raw.split()
-            name = parts[0]
-        if lang_match:
-            lang = lang_match.group(1).lower()
-        else:
-            lang = None
-
+            name_tokens = tokens
+        name = " ".join(name_tokens).strip()
+        # defensive: strip quotes leftover
+        if (name.startswith('"') and name.endswith('"')) or (name.startswith("'") and name.endswith("'")):
+            name = name[1:-1]
+        if not name:
+            print("Invalid name")
+            return
+        # If name looks like a file or language requested -> create file
         if "." in name or lang:
             filename = name
-            if not "." in name and lang:
+            if "." not in name and lang:
                 ext = LANG_MAP.get(lang.lower())
                 if not ext:
                     print("Unknown language:", lang)
@@ -947,20 +958,6 @@ class NovaHubShell:
             return
         os.makedirs(folder, exist_ok=True)
         print("Created folder:", normalize_virtual_path(folder))
-    
-    def cmd_ls(self, args):
-        dirpath = self.cwd if not args else os.path.join(self.cwd, args[0])
-        dirpath = path_within_root(dirpath)
-        if not dirpath or not os.path.isdir(dirpath):
-            print("No such directory")
-            return
-        items = os.listdir(dirpath)
-        for it in sorted(items):
-            p = os.path.join(dirpath, it)
-            if os.path.isdir(p):
-                print(f"{it}/")
-            else:
-                print(it)
     
     def cmd_cd(self, args):
         if not args:
@@ -1106,13 +1103,6 @@ class NovaHubShell:
                 else:
                     print("Usage: insert <line#> <text>")
                 continue
-            buffer.append(line)
-            if self.active_file.endswith('.ns'):
-                highlighted = highlight_novascript(line)
-                print(color(f"[{len(buffer)}] {highlighted}", C.TEXT))
-            else:
-                print(f"[{len(buffer)}] {line}")
-    
     def run_script_file(self, filepath, bg=False):
         p = path_within_root(os.path.join(self.cwd, filepath))
         if not p or not os.path.isfile(p):
@@ -1369,9 +1359,15 @@ class NovaHubShell:
     def handle_input_line(self, line):
         if not line:
             return
-        parts = line.strip().split(maxsplit=1)
-        cmd = parts[0]
-        args = parts[1].split() if len(parts) > 1 else []
+        try:
+            tokens = shlex.split(line)
+        except Exception:
+            # fallback to plain split if shlex fails
+            tokens = line.strip().split()
+        if not tokens:
+            return
+        cmd = tokens[0]
+        args = tokens[1:]
         
         if cmd == "mkdir":
             self.cmd_mkdir(args)
