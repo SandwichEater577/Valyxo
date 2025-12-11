@@ -1,0 +1,35 @@
+COMMAND: NovaHub
+
+HOW TO USE:
+NovaHub is the main terminal environment. Available commands:
+  enter NovaScript | enter NovaGPT | mkdir | ls | cd | cat | grep
+  nano | run | jobs | kill | man | settings | -help | quit
+
+EXAMPLE:
+mkdir myproject
+cd myproject
+nano main.ns
+run main.ns
+jobs
+
+DESCRIPTION:
+NovaHub is a terminal-based developer environment providing an isolated
+virtual filesystem, NovaScript interpreter, and development tools. All
+files are stored under ~/NovaHubDocuments/Projects/ by default.
+
+LANGUAGE:
+System
+
+NOTES:
+- Prompt shows current path and active file
+- All paths are relative to NovaHub virtual filesystem
+- Use 'cd' to navigate, 'mkdir' to create projects
+- Type '-help' for quick command list
+
+WARNINGS:
+- Do not upload NovaHubDocuments to public repositories
+- Background jobs cannot accept user input
+- Settings are persistent; use 'settings toggle' to modify
+
+SEE ALSO:
+man NovaScript, man nano, man run, man settings

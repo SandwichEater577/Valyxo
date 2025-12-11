@@ -1,0 +1,44 @@
+COMMAND: nano
+
+HOW TO USE:
+nano [filename]              # Open file in editor
+show                         # Display all lines
+delete <line#>               # Remove line
+replace <line#> <text>       # Update line
+insert <line#> <text>        # Insert before line
+save                         # Save without exiting
+exit                         # Save and exit editor
+quit                         # Exit without saving
+
+EXAMPLE:
+nano main.ns
+set x = 10
+set y = 20
+print x
+print y
+exit
+
+DESCRIPTION:
+nano is a line-based text editor designed for NovaScript files. Lines are
+stored in memory and can be edited using commands. When you exit with 'exit',
+the buffer is written to disk. No line numbers are displayed, but you
+reference lines by their number starting from 1.
+
+LANGUAGE:
+Editor
+
+NOTES:
+- Default file extension is .ns (NovaScript)
+- You will be prompted for language if no extension
+- Lines are appended when typed (not executed)
+- Use 'show' to see current buffer before saving
+- Works with .ns, .js, .py, .java files
+
+WARNINGS:
+- 'quit' discards all changes without confirmation
+- Very long lines may display awkwardly
+- No undo functionality available
+- Replacing non-existent lines shows error
+
+SEE ALSO:
+man run, man NovaScript, mkdir

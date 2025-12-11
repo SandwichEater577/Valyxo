@@ -1,0 +1,42 @@
+COMMAND: NovaScript
+
+HOW TO USE:
+set <name> = <expression>        # Assign variable
+print <expression>               # Output value
+if [condition] then [cmd] else [cmd]  # Conditional
+vars                             # Show all variables
+exit                             # Exit interpreter
+help                             # Show help
+
+EXAMPLE:
+set x = 10
+set y = 20
+set sum = x + y
+print sum
+if [sum > 25] then [print "Large"] else [print "Small"]
+
+DESCRIPTION:
+NovaScript is a lightweight interpreted language with safe expression
+evaluation. Expressions are parsed and executed using Python's ast module
+for security. Variables are stored in runtime context and can be used in
+expressions.
+
+LANGUAGE:
+NovaScript
+
+NOTES:
+- Arithmetic: +, -, *, /, //, %, **
+- Comparison: ==, !=, <, <=, >, >=
+- Boolean: and, or, not
+- Strings in quotes: "text" or 'text'
+- Comments start with #
+- Expressions evaluated safely using ast parser
+
+WARNINGS:
+- Undefined variables raise runtime errors
+- Division by zero will cause errors
+- Type mismatches in operations will fail
+- Unknown commands raise "Unknown NovaScript command" error
+
+SEE ALSO:
+man run, man nano, enter NovaScript

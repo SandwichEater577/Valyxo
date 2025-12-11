@@ -1,0 +1,33 @@
+COMMAND: jobs
+
+HOW TO USE:
+jobs                 # List all running background jobs
+
+EXAMPLE:
+run worker.ns &
+run task.ns &
+jobs
+
+DESCRIPTION:
+jobs displays a list of all currently running background jobs. Each job
+shows its ID, filename, status, and elapsed time in seconds. Jobs are
+created with 'run <file> &' and can be terminated with 'kill <id>'.
+
+LANGUAGE:
+System
+
+NOTES:
+- Job ID is assigned sequentially (#1, #2, etc.)
+- Status shows: running, finished, terminated, or error message
+- Elapsed time updates continuously
+- Jobs are thread-based and run concurrently
+- Completed jobs remain visible until new job replaces ID
+
+WARNINGS:
+- No output if no jobs are running
+- Terminated jobs show in list briefly
+- IDs are not reused after kill
+- Long-running jobs may consume resources
+
+SEE ALSO:
+man run, man kill, man NovaHub

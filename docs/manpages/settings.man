@@ -1,0 +1,36 @@
+COMMAND: settings
+
+HOW TO USE:
+settings              # Show all settings
+settings toggle <name>  # Toggle boolean setting
+settings show         # Show all settings (alias)
+
+EXAMPLE:
+settings
+settings toggle suggestions
+settings toggle colors
+settings show
+
+DESCRIPTION:
+settings manages NovaHub configuration. Settings are persistent and stored
+in ~/NovaHubDocuments/Config/config.json. Boolean settings can be toggled
+on/off.
+
+LANGUAGE:
+System
+
+NOTES:
+- Available settings: suggestions, colors, start_cwd, remember_language
+- suggestions: Enable/disable command autosuggestion
+- colors: Enable/disable colored terminal output
+- start_cwd: Initial working directory on startup
+- remember_language: Remember last used language (future feature)
+
+WARNINGS:
+- Unknown setting names show "No such setting"
+- Settings file corruption may reset to defaults
+- Changes take effect immediately
+- start_cwd change requires path within NovaHub
+
+SEE ALSO:
+man NovaHub, man -help

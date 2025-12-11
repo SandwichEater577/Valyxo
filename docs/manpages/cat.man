@@ -1,0 +1,32 @@
+COMMAND: cat
+
+HOW TO USE:
+cat <filename>       # Display file contents
+
+EXAMPLE:
+cat main.ns
+cat projects/script.py
+cat config.json
+
+DESCRIPTION:
+cat displays the full contents of a file to the terminal. The file must
+exist in the current directory or a subdirectory. UTF-8 encoding is assumed.
+
+LANGUAGE:
+System
+
+NOTES:
+- Displays entire file content
+- UTF-8 text files recommended
+- Works with all text formats (ns, js, py, java, json, etc.)
+- Use grep to search within files
+- Use nano to edit files
+
+WARNINGS:
+- Binary files may produce garbled output
+- File must exist or "No such file" error shown
+- Very large files will be displayed in full (no paging)
+- Files outside current scope show "No such file"
+
+SEE ALSO:
+man grep, man nano, man ls

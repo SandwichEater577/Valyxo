@@ -1,0 +1,37 @@
+COMMAND: man
+
+HOW TO USE:
+man <topic>        # Read manual page
+man command        # List all commands
+man lang           # List supported languages
+
+EXAMPLE:
+man NovaScript
+man nano
+man run
+man command
+man lang
+
+DESCRIPTION:
+man displays built-in documentation for NovaHub commands and features.
+Documentation is stored as .man files in the System/man directory. The
+pager displays content with page navigation.
+
+LANGUAGE:
+System
+
+NOTES:
+- Topics are case-insensitive
+- Pager controls: SPACE (next page), ENTER (next line), q (quit)
+- Autosuggestion for close matches
+- Available topics: see 'man command'
+- Language list with: man lang
+
+WARNINGS:
+- Topic not found shows "No manual entry for <topic>"
+- Very long pages require scrolling
+- Pager blocks until dismissed
+- Typos may trigger suggestions
+
+SEE ALSO:
+man -help, man NovaHub, man NovaScript

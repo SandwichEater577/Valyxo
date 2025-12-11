@@ -1,0 +1,41 @@
+COMMAND: filesystem (Virtual FileSystem)
+
+HOW TO USE:
+Access via: mkdir, ls, cd, cat, nano, grep, run
+Root: ~/NovaHubDocuments/
+
+EXAMPLE:
+mkdir projects
+cd projects
+mkdir myapp
+nano main.ns
+ls
+cd ..
+ls
+
+DESCRIPTION:
+NovaHub maintains an isolated virtual filesystem stored under
+~/NovaHubDocuments/. All paths are relative to this root. Three main
+directories organize content:
+- Projects/: User projects and scripts
+- System/: System files, manpages, configuration
+- Config/: Configuration and settings
+
+LANGUAGE:
+System
+
+NOTES:
+- All paths contained within NovaHubDocuments
+- Cannot escape to parent or system directories
+- Folders created with mkdir
+- Files created with mkdir or nano
+- Extensions added automatically based on language
+
+WARNINGS:
+- Path traversal attempts blocked by safety checks
+- Absolute paths start with /
+- Relative paths relative to current directory
+- Do not upload NovaHubDocuments to public repos
+
+SEE ALSO:
+man mkdir, man ls, man cd, man cat

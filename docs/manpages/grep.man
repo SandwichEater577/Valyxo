@@ -1,0 +1,33 @@
+COMMAND: grep
+
+HOW TO USE:
+grep <pattern> <file>   # Search file with regex pattern
+
+EXAMPLE:
+grep "set" main.ns
+grep "print" script.ns
+grep "[0-9]+" data.txt
+
+DESCRIPTION:
+grep searches a file for lines matching a regular expression pattern. Each
+matching line is printed with its line number (starting from 1) and the
+content. The pattern uses Python regex syntax.
+
+LANGUAGE:
+System
+
+NOTES:
+- Pattern is a Python regular expression
+- Line numbers show as "line#:content"
+- Case-sensitive by default
+- Single file only (multiple files not supported)
+- Works with any text file type
+
+WARNINGS:
+- File must exist or "No such file" error shown
+- Invalid regex patterns show errors
+- No case-insensitive flag yet
+- Patterns with special chars must be properly escaped
+
+SEE ALSO:
+man cat, man nano, man run

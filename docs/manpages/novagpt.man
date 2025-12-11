@@ -1,0 +1,35 @@
+COMMAND: NovaGPT
+
+HOW TO USE:
+enter NovaGPT          # Enter chat mode
+Nova@"question"        # Ask NovaGPT something
+exit                   # Return to main prompt
+
+EXAMPLE:
+enter NovaGPT
+NovaGPT=> Nova@"How do I create a variable?"
+NovaGPT=> Nova@"What is NovaScript?"
+NovaGPT=> exit
+
+DESCRIPTION:
+NovaGPT is a simulated AI assistant integrated into NovaHub. It provides
+guidance on NovaScript syntax, NovaHub commands, and development questions.
+Currently simulated with pattern-based responses. Future versions may
+support real LLM integration.
+
+LANGUAGE:
+System
+
+NOTES:
+- Use Nova@"text" syntax for structured queries
+- Simulated responses based on keyword matching
+- Type 'help' in chat mode for usage tips
+- Supports natural language questions about NovaHub features
+
+WARNINGS:
+- Responses are simulated and not from real AI
+- Always verify critical information with documentation
+- Chat history is not saved between sessions
+
+SEE ALSO:
+man NovaHub, man NovaScript, enter NovaGPT

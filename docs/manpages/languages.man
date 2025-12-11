@@ -1,0 +1,41 @@
+COMMAND: languages (Supported Languages)
+
+HOW TO USE:
+mkdir "file" --LANG  # Create file with language
+nano [file]          # Select language when creating
+man lang             # List all languages
+
+EXAMPLE:
+mkdir "main" --ns
+mkdir "script" --python
+mkdir "index.js"
+man lang
+
+DESCRIPTION:
+NovaHub supports multiple programming languages. When creating files
+without extensions, you're prompted to choose a language. Files are given
+appropriate extensions automatically.
+
+LANGUAGE:
+System
+
+SUPPORTED LANGUAGES:
+- ns, nova, novascript, nscript  -> .ns (NovaScript)
+- js, javascript, node            -> .js (JavaScript)
+- py, python                       -> .py (Python)
+- java                             -> .java (Java)
+
+NOTES:
+- Default language is NovaScript (.ns)
+- Case-insensitive language names
+- Extensions added automatically
+- NovaScript files are executable with 'run'
+- Other languages for reference (future execution planned)
+
+WARNINGS:
+- Unknown language shows error
+- Type 'man lang' to see full list
+- Language detection based on extension
+
+SEE ALSO:
+man mkdir, man nano, man run, man NovaScript

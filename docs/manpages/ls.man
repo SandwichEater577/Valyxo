@@ -1,0 +1,33 @@
+COMMAND: ls
+
+HOW TO USE:
+ls                    # List current directory
+ls <folder>           # List specific folder
+
+EXAMPLE:
+ls
+ls projects
+ls projects/myproject
+
+DESCRIPTION:
+ls lists the contents of a directory in sorted order. Folders are shown
+with a trailing slash (/) while files are shown without decoration. Output
+is alphabetically sorted.
+
+LANGUAGE:
+System
+
+NOTES:
+- Folders shown as "name/"
+- Files shown as "name.ext"
+- Output is sorted alphabetically
+- Use cd to navigate between directories
+- Relative paths from current directory
+
+WARNINGS:
+- Invalid directories show "No such directory"
+- Hidden files (starting with .) are shown
+- Paths must be within NovaHub filesystem
+
+SEE ALSO:
+man cd, man cat, mkdir

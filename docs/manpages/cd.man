@@ -1,0 +1,34 @@
+COMMAND: cd
+
+HOW TO USE:
+cd                    # Go to Main project
+cd <path>             # Change to directory
+
+EXAMPLE:
+cd
+cd projects
+cd /Projects/Main
+cd projects/myapp
+
+DESCRIPTION:
+cd changes the current working directory. With no arguments, it goes to
+the default Main project. Paths can be relative (from current directory) or
+absolute (starting with /). The prompt updates to show the new location.
+
+LANGUAGE:
+System
+
+NOTES:
+- Relative path: cd projects (from current)
+- Absolute path: cd /Projects/Main (from root)
+- No arguments: cd (goes to Main)
+- Active file is cleared when changing directory
+- Path must exist and be within NovaHub filesystem
+
+WARNINGS:
+- Invalid paths show "No such directory (within NovaHub)"
+- Cannot navigate outside NovaHubDocuments
+- Parent directory .. not yet supported
+
+SEE ALSO:
+man ls, man mkdir, man pwd (for current path)

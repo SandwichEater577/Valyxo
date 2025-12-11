@@ -1,0 +1,33 @@
+COMMAND: kill
+
+HOW TO USE:
+kill <jobid>        # Terminate background job
+
+EXAMPLE:
+run worker.ns &
+jobs
+kill 1
+
+DESCRIPTION:
+kill terminates a background job by its ID. The job is signaled to stop,
+and its status changes to "terminated". The job thread will check the stop
+flag and exit gracefully.
+
+LANGUAGE:
+System
+
+NOTES:
+- Job ID shown in 'jobs' output
+- Graceful termination (not forceful)
+- Status changes to "terminating" then "terminated"
+- Use jobs to see current running tasks
+- ID must be numeric
+
+WARNINGS:
+- Invalid job ID shows "No such job"
+- Non-numeric arguments show "Invalid job id"
+- Killing non-existent jobs shows error
+- Terminated jobs may take time to stop completely
+
+SEE ALSO:
+man jobs, man run, man NovaHub

@@ -1,0 +1,37 @@
+COMMAND: run
+
+HOW TO USE:
+run <file>           # Execute in foreground
+run <file> &         # Execute in background (job)
+
+EXAMPLE:
+run main.ns
+run worker.ns &
+run script.py &
+jobs
+kill 1
+
+DESCRIPTION:
+run executes a NovaScript file. Without &, the script runs in foreground
+and blocks until complete. With &, the script runs in background as a job
+with a process ID. Background jobs can be monitored with 'jobs' and
+terminated with 'kill'.
+
+LANGUAGE:
+System
+
+NOTES:
+- Foreground: runs to completion, shows output directly
+- Background (&): runs in separate thread, shows job ID
+- File must have supported extension (.ns, .js, .py, .java)
+- Background jobs cannot accept user input
+- Use jobs to see running background tasks
+
+WARNINGS:
+- Long-running foreground jobs block the terminal
+- Background jobs must be manually killed
+- File not found shows "No such file"
+- Syntax errors in scripts show during execution
+
+SEE ALSO:
+man jobs, man kill, man nano, man NovaScript

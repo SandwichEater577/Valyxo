@@ -1,0 +1,35 @@
+COMMAND: mkdir
+
+HOW TO USE:
+mkdir <name>                 # Create folder
+mkdir "filename" --LANG      # Create file with extension
+mkdir file.ns                # Create file with extension
+
+EXAMPLE:
+mkdir projects
+mkdir "main.ns" --ns
+mkdir myfile --python
+
+DESCRIPTION:
+mkdir creates folders or files in the current directory. If the name
+contains a dot or a language flag, a file is created. Otherwise, a folder
+is created. File extensions are automatically added based on language.
+
+LANGUAGE:
+System
+
+NOTES:
+- Folder names: mkdir myproject
+- File with extension: mkdir main.ns
+- File with language: mkdir "main" --ns
+- Supported languages: ns, js, python, java
+- Quotes optional for single-word names
+
+WARNINGS:
+- Paths cannot escape the NovaHub virtual filesystem
+- Invalid paths show "Invalid folder path" error
+- Unknown languages show error with supported list
+- Files cannot be created outside Projects directory
+
+SEE ALSO:
+man ls, man cd, man nano

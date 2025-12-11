@@ -1,0 +1,2 @@
+set msg = "Hello World"
+print msg
