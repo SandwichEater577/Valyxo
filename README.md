@@ -1,5 +1,23 @@
 # 🚀 Valyxo — Complete Developer Ecosystem
 
+**🖥️ Running Valyxo (Desktop App)**
+
+Valyxo is available as a **native desktop application** for all major operating systems.
+No terminal or programming knowledge is required to run the app.
+
+### Supported Platforms
+- 🪟 **Windows** — Portable App
+- 🐧 **Linux** — AppImage
+- 🍎 **macOS** — Native `.app`
+
+The desktop app automatically starts:
+- the backend API
+- the database
+- the web interface
+
+Everything runs silently in the background.
+
+
 > **Valyxo** = Terminal CLI + Desktop Apps + Web Platform + AI Assistant
 
 ```
