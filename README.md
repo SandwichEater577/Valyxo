@@ -1,6 +1,6 @@
-# 🚀 Valyxo — Ekosystem Programistyczny XXI Wieku
+# 🚀 Valyxo — Complete Developer Ecosystem
 
-> **Valyxo** = Terminal developer + AI Assistant + Ecosystem
+> **Valyxo** = Terminal CLI + Desktop Apps + Web Platform + AI Assistant
 
 ```
      ██    ██  █████  ██       █████  ██   ██  ██████  
@@ -9,44 +9,58 @@
      ██    ██ ██   ██ ██      ██   ██   ██    ██    ██ 
       ██████  ██   ██ ███████ ██   ██   ██     ██████  
                                                         
-         Version 0.31+ | Powered by Zencoder AI
+         Version 0.41 | Powered by Zencoder AI
 ```
 
-## 📋 Spis Treści
+## 📋 Table of Contents
 
-1. [O Projekcie](#o-projekcie)
-2. [Architektura](#architektura)
-3. [Komponenty](#komponenty)
-4. [Instalacja](#instalacja)
-5. [Użytkowanie](#użytkowanie)
-6. [Roadmapa](#roadmapa)
-7. [Licencja](#licencja)
-
----
-
-## 🎯 O Projekcie
-
-**Valyxo** to kompleksowy ekosystem dla programistów, składający się z trzech głównych komponentów:
-
-| Komponent | Typ | Opis |
-|-----------|-----|------|
-| **ValyxoHub** | Terminal CLI | Środowisko programistyczne w terminalu |
-| **ValyxoApp** | Aplikacja Desktop | Graficzny interfejs dla wizualizacji |
-| **ValyxoGPT** | AI Assistant | Asystent oparty na Zencoder AI |
-| **ValyxoScript** | Język | Lekki język skryptowy dla Valyxo |
-
-### 🌟 Cechy Valyxo
-
-- ✅ **Nowoczesna architektura** — modularny design, łatwy do rozszerzania
-- ✅ **Terminal-first** — pełna moc w CLI dla developerów
-- ✅ **AI-powered** — integracja z Zencoder AI
-- ✅ **Cross-platform** — Linux, Windows, macOS
-- ✅ **Open Source** — publiczny kod, transparent development
-- ✅ **Bezpieczny** — hash haseł, walidacja, ochrona danych
+1. [What is Valyxo](#what-is-valyxo)
+2. [Key Features](#key-features)
+3. [Architecture](#architecture)
+4. [Components](#components)
+   - [ValyxoHub](#valyxohub-terminal-cli)
+   - [ValyxoScript](#valyxoscript)
+   - [ValyxoGPT](#valyxogpt)
+   - [ValyxoApp](#valyxoapp-desktop-applications)
+5. [Web Platform](#web-platform)
+6. [Installation](#installation)
+7. [Quick Start](#quick-start)
+8. [Security](#security)
+9. [Roadmap](#roadmap)
+10. [Documentation](#documentation)
+11. [Contributing](#contributing)
+12. [License](#license)
 
 ---
 
-## 🏗️ Architektura
+## 🎯 What is Valyxo
+
+**Valyxo** is a comprehensive developer ecosystem designed for modern software development. It combines a powerful terminal interface, intelligent scripting language, AI assistance, and web platform into one unified system.
+
+| Component | Type | Description |
+|-----------|------|-------------|
+| **ValyxoHub** | Terminal CLI | Professional development environment |
+| **ValyxoApp** | Desktop Applications | Graphical interface with multi-language support |
+| **ValyxoGPT** | AI Assistant | Intelligent coding companion |
+| **ValyxoScript** | Programming Language | Lightweight, intuitive scripting |
+| **Web Platform** | Full Stack | Collaboration and management hub |
+
+---
+
+## 🌟 Key Features
+
+- ✅ **Modern Architecture** — Modular, scalable, and extensible design
+- ✅ **Terminal-First** — Full power for developers in CLI
+- ✅ **AI-Powered** — Integrated Zencoder AI for intelligent assistance
+- ✅ **Cross-Platform** — Linux, Windows, macOS support
+- ✅ **Open Source** — Transparent development, community-driven
+- ✅ **Secure** — Password hashing, input validation, data protection
+- ✅ **Multi-Language** — Support for ValyxoScript, JavaScript, Python, Java
+- ✅ **Project Management** — Built-in tools for file operations and job management
+
+---
+
+## 🏗️ Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -71,62 +85,68 @@
     │  │ - Manual System                     │   │
     │  │ - Color Theming                     │   │
     │  └─────────────────────────────────────┘   │
-    └────┬──────────────────────────────────┬────┘
-         │                                  │
-    ┌────▼───────────────────────────┬─────▼────┐
-    │                                │          │
+    └────┬──────────────────────────────┬────┘
+         │                              │
+    ┌────▼───────────────────────┬─────▼────┐
+    │                            │          │
 ┌───▼──────┐                   ┌─────▼───┐ ┌────▼─────┐
 │ValyxoGPT │                   │ Zencoder│ │ Database  │
 │(AI Core) │                   │   API   │ └──────────┘
 └──────────┘                   └─────────┘
 ```
 
-### 🎯 Trzy Główne Warstwy
+### Three Core Layers
 
 #### 1️⃣ **ValyxoHub** — Terminal CLI
-- Aplikacja konsolowa dla programistów
-- Pełna moc edycji i uruchamiania kodu
-- Wsparcie dla wielu języków (ValyxoScript, JS, Python, Java)
-- AI Assistant w terminalu
+- Professional console application for developers
+- Full-featured code editing and execution
+- Multi-language support (ValyxoScript, JavaScript, Python, Java)
+- Integrated AI Assistant in terminal
+- Project management and file operations
 
-#### 2️⃣ **ValyxoApp** — Aplikacja Desktop
-- Interfejs graficzny (planowana, C++/Java/Rust)
-- Wizualizacja projektów
-- Integracja z ValyxoHub
-- Nie zastępuje terminal, tylko go uzupełnia
+#### 2️⃣ **ValyxoApp** — Desktop Applications
+- Graphical user interface for enhanced workflow
+- Project visualization and management
+- Integration with ValyxoHub
+- Implementations: Java (JavaFX), C# (.NET/MAUI), C++ (Qt), JavaScript (Electron)
+- Complements terminal, doesn't replace it
 
-#### 3️⃣ **Strona Internetowa** — Full Stack Platform
+#### 3️⃣ **Web Platform** — Full Stack Ecosystem
 - Frontend: HTML5 + CSS3 + JavaScript
 - Backend: Node.js + Express (REST API)
-- Baza danych: PostgreSQL/SQLite
-- Funkcje: Login, Register, Dashboard, AI Chat
+- Database: PostgreSQL/SQLite
+- Features: Authentication, Dashboard, Collaboration, AI Chat
 
 ---
 
-## 🔧 Komponenty
+## 🔧 Components
 
 ### **ValyxoHub** (Terminal)
 
+Launch the terminal environment:
+
 ```bash
-valyxohub                    # Uruchomienie terminalowego hubą
+python src/Valyxo.py
 ```
 
-Komendy:
-- `mkdir <path>` — Tworzenie katalogów
-- `ls [path]` — Wylistowanie plików
-- `cd <path>` — Zmiana katalogu
-- `nano <file>` — Edytor plików
-- `run <file>` — Uruchomienie skryptu
-- `jobs` — Lista uruchomionych procesów
-- `kill <pid>` — Zabicie procesu
-- `enter ValyxoScript` — Wejście w interpreter skryptów
-- `enter ValyxoGPT` — Rozmowa z AI asystentem
-- `theme [list|set]` — Zarządzanie motywami
-- `man <command>` — Dokumentacja
+**Available Commands:**
+- `mkdir <path>` — Create directories
+- `ls [path]` — List files
+- `cd <path>` — Change directory
+- `cat <file>` — Display file contents
+- `grep <pattern>` — Search files
+- `nano <file>` — Edit files
+- `run <file>` — Execute script
+- `jobs` — List running processes
+- `kill <pid>` — Terminate process
+- `enter ValyxoScript` — Enter ValyxoScript interpreter
+- `enter ValyxoGPT` — Chat with AI assistant
+- `theme [list|set]` — Manage themes
+- `man <command>` — View documentation
 
-### **ValyxoScript**
+### **ValyxoScript** (v0.41 Enhanced)
 
-Lekki język skryptowy:
+Lightweight scripting language designed for simplicity and power. v0.41 includes a full runtime with safe evaluation, control flow, and function support.
 
 ```valyxoscript
 set x = 10
@@ -134,52 +154,131 @@ set y = 20
 set z = x + y
 print z
 
-if [z > 20] then [print "Wieksza!"] else [print "Mniejsza!"]
+if [z > 20] then [print "Greater!"] else [print "Smaller!"]
+
+for i in 1 to 5 {
+  print i
+}
+
+while [x < 30] {
+  set x = x + 5
+  print x
+}
 
 func add(a, b) {
-  set result = a + b
-  print result
+  print a + b
 }
+
+add(3, 4)
 ```
+
+**Core Features (v0.41):**
+- **Variable Management**: `set x = value` with type inference
+- **Expressions**: Safe mathematical evaluation (2+3, x*10, etc.)
+- **Conditionals**: `if [condition] then [cmd] else [cmd]`
+- **Loops**: 
+  - `for i in start to end { ... }` — Counted iteration
+  - `while [condition] { ... }` — Conditional loops
+  - Infinite loop protection with MAX_ITERATIONS
+- **Functions**: `func name(params) { body }` with parameter passing
+- **Output**: `print x`, `print "text"`, `print x + 10`
+- **Safety**: AST validation, no arbitrary code execution
+- **Variable Inspection**: `vars` command to list all variables
+
+**Runtime Implementation:**
+- `ValyxoScriptRuntime` class: Full interpreter
+- `safe_eval()`: Secure expression evaluation
+- Block stack: Nested control flow support
+- Function registry: Reusable code blocks
+- Error handling: Informative error messages
 
 ### **ValyxoGPT**
 
-AI Assistant w terminalu:
+AI-powered assistant integrated in terminal:
 
 ```bash
 > enter ValyxoGPT
 > How do I define a function in ValyxoScript?
-AI: ValyxoScript functions: Use 'func name(params) { body }'...
+AI: In ValyxoScript, use the 'func' keyword: func add(a, b) { ... }
 ```
+
+**Capabilities:**
+- Code explanation and assistance
+- Debugging support
+- Best practices recommendations
+- Multi-turn conversations
+- Context-aware responses
+
+### **ValyxoApp** — Desktop Applications
+
+Multi-language desktop implementations:
+
+- **Java** — JavaFX/Swing UI
+- **C#** — .NET/WPF/MAUI
+- **C++** — Qt framework
+- **JavaScript** — Electron/Tauri
+
+Each provides:
+- Project management interface
+- ValyxoScript editor and runner
+- Log viewer
+- ASCII map visualization
+- Direct ValyxoHub integration
 
 ---
 
-## 📦 Instalacja
+## 🌐 Web Platform
 
-### Wymagania
+Complete web-based ecosystem:
+
+**Frontend:**
+- Responsive HTML5 + CSS3 interface
+- Interactive JavaScript components
+- Feed/card-based design
+- Real-time updates
+
+**Backend:**
+- RESTful API with Express.js
+- User authentication and authorization
+- Project management
+- Collaboration tools
+
+**Features:**
+- User registration and login
+- Dashboard and profile management
+- Project workspace
+- API documentation
+- Blog and changelog
+- Community features
+
+---
+
+## 📦 Installation
+
+### Requirements
 - Python 3.8+
 - Git
-- npm (dla backendu strony)
+- npm (for web platform)
 
-### Krok 1: Klonowanie repozytorium
+### Step 1: Clone Repository
 
 ```bash
 git clone https://github.com/yourusername/valyxo.git
 cd valyxo
 ```
 
-### Krok 2: Instalacja zależności
+### Step 2: Install Dependencies
 
 ```bash
 # Terminal CLI
 pip install -r requirements.txt
 
-# Strona internetowa (opcjonalnie)
+# Web platform (optional)
 cd website
 npm install
 ```
 
-### Krok 3: Uruchomienie ValyxoHub
+### Step 3: Launch
 
 ```bash
 python src/Valyxo.py
@@ -187,65 +286,132 @@ python src/Valyxo.py
 
 ---
 
-## 🎮 Użytkowanie
+## 🎮 Quick Start
 
-### Uruchamianie ValyxoHub
+### Launch ValyxoHub
 
 ```bash
 python src/Valyxo.py
 ```
 
-Powinieneś zobaczyć:
+You should see:
 ```
-Welcome to Valyxo v0.31 (Zencoder Integrated)
-valyxo:~> 
+Welcome to Valyxo v0.41 (Zencoder Integrated)
+valyxo:~>
 ```
 
-### Podstawowe polecenia
+### Basic Workflow
 
 ```bash
-# Tworzenie projektu
+# Create a project
 mkdir Projects/MyProject
 cd Projects/MyProject
 
-# Tworzenie pliku
-nano main.vs
+# Create a script file
+nano script.vs
 
-# Uruchomienie
-run main.vs
+# Add ValyxoScript code
+set name = "Valyxo"
+print name
 
-# Rozmowa z AI
-enter ValyxoGPT
+# Run it
+run script.vs
 
-# Pomoc
+# Get help
 man valyxohub
+```
+
+### ValyxoScript Examples
+
+**Example 1: Basic Variables and Math**
+```valyxoscript
+set x = 10
+set y = 20
+set sum = x + y
+print sum
+```
+
+**Example 2: Loops**
+```valyxoscript
+for i in 1 to 5 {
+  print i
+}
+
+set count = 0
+while [count < 3] {
+  print count
+  set count = count + 1
+}
+```
+
+**Example 3: Functions**
+```valyxoscript
+func multiply(a, b) {
+  print a * b
+}
+
+multiply(4, 5)
+```
+
+**Example 4: Conditionals**
+```valyxoscript
+set score = 85
+if [score >= 80] then [print "Passed!"] else [print "Try again"]
 ```
 
 ---
 
-## 🗺️ Roadmapa
+## 🔒 Security
 
-### ✅ v0.31 (Obecna)
-- [x] Modularny kod Valyxo
-- [x] Usunięcie legacy NovaHub
-- [x] Clean architektura
-- [ ] Pełna dokumentacja
+Valyxo is built with security as a core principle:
 
-### 🔄 v0.32 (Planowana)
-- [ ] ValyxoApp (Desktop Application)
-- [ ] Rozszerzone moduły ValyxoScript
-- [ ] Wtyczki (plugin system)
-- [ ] Performance optimization
+- ✅ **Password Hashing** — bcrypt/argon2
+- ✅ **Input Validation** — Sanitization of all user inputs
+- ✅ **HTTPS** — Encrypted communication
+- ✅ **Secure Secrets** — Environment variables, no plaintext
+- ✅ **SQL Injection Protection** — Parameterized queries
+- ✅ **CSRF Protection** — Token validation
+- ✅ **XSS Prevention** — Output escaping
 
-### 📅 v0.33+ (Future)
-- [ ] Web IDE (Visual Studio Code-like)
-- [ ] Collaboration tools
-- [ ] Mobile app
-- [ ] Cloud storage integration
+See [SECURITY_AUDIT.md](./SECURITY_AUDIT.md) for detailed analysis.
 
 ---
 
-## 📂 Struktura Projektu
+## 🗺️ Roadmap
+
+### ✅ v0.41 (Current)
+- [x] Modular Valyxo core architecture with type hints
+- [x] ValyxoHub terminal with full commands
+- [x] ValyxoScript full runtime implementation
+  - [x] Variable management and expressions
+  - [x] Control flow (if/else, for, while)
+  - [x] Function definitions and calls
+  - [x] Infinite loop protection
+  - [x] Safe AST-based evaluation
+- [x] ASCII art and branding system
+- [x] Zencoder AI integration
+- [x] Web platform skeleton (23 HTML pages)
+- [x] Security improvements
+- [x] Version standardization (0.41)
+
+### 🔄 v0.42 (Planned)
+- [ ] ValyxoApp desktop applications (Java, C#, C++, Electron)
+- [ ] Extended ValyxoScript features
+- [ ] Plugin system for extensions
+- [ ] Performance optimization
+- [ ] Advanced web platform features
+- [ ] Collaboration tools
+
+### 📅 v0.43+ (Future)
+- [ ] Web IDE (VS Code-like)
+- [ ] Mobile application
+- [ ] Cloud storage integration
+- [ ] Team collaboration platform
+- [ ] Advanced analytics
+
+---
+
+## 📂 Project Structure
 
 ```
 valyxo/
@@ -253,100 +419,93 @@ valyxo/
 │   ├── Valyxo.py                 (Entry point)
 │   ├── valyxo/
 │   │   ├── core/                 (Core modules)
-│   │   │   ├── colors.py
-│   │   │   ├── constants.py
-│   │   │   ├── utils.py
-│   │   │   ├── filesystem.py
-│   │   │   ├── gpt.py
-│   │   │   ├── jobs.py
-│   │   │   └── man.py
-│   │   ├── shell/
-│   │   ├── editor/
-│   │   └── __init__.py
-│   └── tests/
+│   │   │   ├── branding.py       (ASCII art & banners)
+│   │   │   ├── colors.py         (Color theming)
+│   │   │   ├── constants.py      (Configuration)
+│   │   │   ├── filesystem.py     (File operations)
+│   │   │   ├── gpt.py            (AI integration)
+│   │   │   ├── jobs.py           (Job management)
+│   │   │   ├── man.py            (Manual system)
+│   │   │   └── utils.py          (Utilities)
+│   │   ├── script.py             (ValyxoScript runtime)
+│   │   ├── shell/                (Shell interface)
+│   │   └── editor/               (Text editor)
 ├── website/
-│   ├── frontend/
-│   │   ├── index.html
-│   │   ├── css/
-│   │   └── js/
-│   ├── backend/
-│   │   └── server.js
-│   └── package.json
+│   ├── css/                      (Stylesheets)
+│   ├── index.html                (Homepage)
+│   └── [23 component pages]
 ├── docs/
-│   ├── ARCHITECTURE.md
-│   ├── MANUAL.md
-│   └── API.md
-├── README.md
-├── LICENSE
-└── requirements.txt
+│   ├── MANUALS.md                (User manual)
+│   └── manpages/                 (Command help)
+├── tests/                        (Test suite)
+├── examples/                     (Example projects)
+├── README.md                     (This file)
+├── LICENSE                       (MIT License)
+└── requirements.txt              (Python dependencies)
 ```
 
 ---
 
-## 🔒 Bezpieczeństwo
+## 📚 Documentation
 
-Valyxo jest zbudowany z myślą o bezpieczeństwie:
+Comprehensive documentation available:
 
-- ✅ **Haszowanie haseł** — bcrypt/argon2
-- ✅ **Walidacja danych** — sanitizacja inputów
-- ✅ **HTTPS** — szyfrowana komunikacja
-- ✅ **Brak plaintext secrets** — environment variables
-- ✅ **SQL Injection protection** — parameterized queries
-- ✅ **CSRF Protection** — token validation
-- ✅ **XSS Prevention** — output escaping
-
----
-
-## 📚 Dokumentacja
-
-- **[VALYXO_ARCHITECTURE.md](./VALYXO_ARCHITECTURE.md)** — Szczegółowa architektura
-- **[VALYXO_QUICK_START.md](./VALYXO_QUICK_START.md)** — Quick reference
-- **docs/API.md** — REST API documentation
-- **docs/MANUAL.md** — Kompletny manual użytkownika
+- **[VALYXO_ARCHITECTURE.md](./VALYXO_ARCHITECTURE.md)** — Detailed architecture
+- **[VALYXO_QUICK_START.md](./VALYXO_QUICK_START.md)** — Quick reference guide
+- **[SECURITY_AUDIT.md](./SECURITY_AUDIT.md)** — Security analysis
+- **[docs/MANUALS.md](./docs/MANUALS.md)** — User manual
+- **[ASCII_MAP_VALYXO.md](./ASCII_MAP_VALYXO.md)** — System visualization
 
 ---
 
 ## 🤝 Contributing
 
-Zapraszamy do contribucji! Aby zacząć:
+We welcome contributions! To get started:
 
-1. Fork repozytorium
-2. Utwórz branch (`git checkout -b feature/NewFeature`)
-3. Commit zmiany (`git commit -m 'Add NewFeature'`)
-4. Push do brancha (`git push origin feature/NewFeature`)
-5. Otwórz Pull Request
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/YourFeature`
+3. Make your changes and commit: `git commit -m 'Add YourFeature'`
+4. Push to the branch: `git push origin feature/YourFeature`
+5. Open a Pull Request
 
----
-
-## 📄 Licencja
-
-Valyxo jest dostępny na licencji **MIT z ograniczeniami komercyjnymi**.
-
-Szczegóły: [LICENSE](./LICENSE)
+**Contributing Guidelines:**
+- Follow existing code style
+- Add tests for new features
+- Update documentation as needed
+- Keep commits atomic and descriptive
 
 ---
 
-## 📞 Kontakt
+## 📄 License
 
-- 🐙 GitHub: [github.com/...](https://github.com)
+Valyxo is licensed under the **MIT License with commercial restrictions**.
+
+See [LICENSE](./LICENSE) for details.
+
+---
+
+## 📞 Contact & Community
+
+- 🐙 GitHub: [github.com/valyxo](https://github.com)
 - 📧 Email: contact@valyxo.dev
-- 🌐 Website: valyxo.dev (planowana)
+- 🌐 Website: https://valyxo.dev
+- 💬 Discord: (Community server)
 
 ---
 
-## 🌟 Podziękowania
+## 🌟 Acknowledgments
 
-Dziękujemy:
-- **Zencoder AI** — za integrację AI
-- Społeczności open-source
-- Wszystkim kontrybutorem
+We thank:
+- **Zencoder AI** — for AI integration
+- **Open Source Community** — for inspiration and tools
+- **All Contributors** — for making Valyxo possible
 
 ---
 
-**Valyxo v0.31+** — The Developer's Ecosystem
+**Valyxo v0.41** — The Complete Developer Ecosystem
 
-_Zbudowanie przez programistów, dla programistów._
+_Built by developers, for developers._
 
 ```
-Made with ❤️ in Poland
+Made with ❤️ for the global developer community
 ```

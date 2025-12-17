@@ -1,15 +1,27 @@
 import os
 import shutil
+from typing import Dict
 from .constants import MAN_DIR
 from .utils import prompt
 
 
 class ValyxoManSystem:
-    def __init__(self):
-        self.pages = self._default_pages()
+    """Manual pages system for Valyxo.
+    
+    Manages help documentation and command references with paged display.
+    """
+
+    def __init__(self) -> None:
+        """Initialize manual system with default pages."""
+        self.pages: Dict[str, Dict[str, str]] = self._default_pages()
 
     @staticmethod
-    def _default_pages():
+    def _default_pages() -> Dict[str, Dict[str, str]]:
+        """Get default manual pages.
+        
+        Returns:
+            Dictionary of manual page names and content
+        """
         return {
             "valyxoHub": {
                 "COMMAND": "Valyxo",
@@ -73,52 +85,105 @@ class ValyxoManSystem:
             }
         }
 
-    def load_pages(self):
+    def load_pages(self) -> None:
+        """Load manual pages to disk if they don't exist."""
+        try:
+            os.makedirs(MAN_DIR, exist_ok=True)
+        except OSError as e:
+            print(f"Error creating man directory: {e}")
+            return
+        
         for name, content in self.pages.items():
             filename = os.path.join(MAN_DIR, name.lower() + ".man")
-            if not os.path.exists(filename):
+            if os.path.exists(filename):
+                continue
+            
+            try:
                 with open(filename, "w", encoding="utf-8") as f:
                     f.write(self._format_manpage(content))
+            except (OSError, IOError) as e:
+                print(f"Error writing manual page {name}: {e}")
 
     @staticmethod
-    def _format_manpage(dic):
-        s = []
-        s.append(f"COMMAND: {dic.get('COMMAND','')}\n")
-        s.append("HOW TO USE:\n")
-        s.append(f"{dic.get('HOWTO','')}\n\n")
-        s.append("EXAMPLE:\n")
-        s.append(f"{dic.get('EXAMPLE','')}\n\n")
-        s.append("DESCRIPTION:\n")
-        s.append(f"{dic.get('DESCRIPTION','')}\n\n")
-        s.append("LANGUAGE:\n")
-        s.append(f"{dic.get('LANGUAGE','')}\n\n")
-        s.append("NOTES:\n")
-        s.append(f"{dic.get('NOTES','')}\n\n")
-        s.append("WARNINGS:\n")
-        s.append(f"{dic.get('WARNINGS','')}\n\n")
-        s.append("SEE ALSO:\n")
-        s.append(f"{dic.get('SEE','')}\n")
-        return "\n".join(s)
+    def _format_manpage(data: Dict[str, str]) -> str:
+        """Format manual page content.
+        
+        Args:
+            data: Manual page data dictionary
+        
+        Returns:
+            Formatted manual page string
+        """
+        command = data.get("COMMAND", "")
+        
+        ascii_headers = {
+            "Valyxo": "  ██    ██  █████  ██       █████  ██   ██  ██████  \n" +
+                     "  ██    ██ ██   ██ ██      ██   ██  ██ ██  ██    ██ \n" +
+                     "  ██    ██ ███████ ██      ███████   ███   ██    ██ \n" +
+                     "  ██    ██ ██   ██ ██      ██   ██   ██    ██    ██ \n" +
+                     "   ██████  ██   ██ ███████ ██   ██   ██     ██████  ",
+            "ValyxoScript": "   ███████ ██      ██████   ██████  ███████ ████████ \n" +
+                          "   ██      ██     ██        ██      ██         ██    \n" +
+                          "   ███████ ██     ██   ███  ██   ███ ███████   ██    \n" +
+                          "        ██ ██     ██    ██  ██    ██      ██   ██    \n" +
+                          "   ███████ ███████  ██████   ██████  ███████   ██    ",
+        }
+        
+        header = ascii_headers.get(command, "")
+        
+        sections = [
+            ("COMMAND", data.get("COMMAND", "")),
+            ("HOW TO USE", data.get("HOWTO", "")),
+            ("EXAMPLE", data.get("EXAMPLE", "")),
+            ("DESCRIPTION", data.get("DESCRIPTION", "")),
+            ("LANGUAGE", data.get("LANGUAGE", "")),
+            ("NOTES", data.get("NOTES", "")),
+            ("WARNINGS", data.get("WARNINGS", "")),
+            ("SEE ALSO", data.get("SEE", ""))
+        ]
+        
+        lines = []
+        if header:
+            lines.append(header)
+            lines.append("\n" + "=" * 60 + "\n")
+        
+        for section_name, section_content in sections:
+            lines.append(f"{section_name}:")
+            lines.append(f"{section_content}\n")
+        
+        return "\n".join(lines)
 
     @staticmethod
-    def pager_display(text):
+    def pager_display(text: str) -> None:
+        """Display text in paginated format.
+        
+        Args:
+            text: Text to display
+        """
         rows, _ = shutil.get_terminal_size((80, 24))
         lines = text.splitlines()
+        
+        if not lines:
+            return
+        
+        lines_per_page = max(rows - 2, 1)
         i = 0
-        page = rows - 2
+        
         while i < len(lines):
-            chunk = lines[i:i+page]
-            for ln in chunk:
-                print(ln)
-            i += page
+            chunk = lines[i:i + lines_per_page]
+            for line in chunk:
+                print(line)
+            
+            i += lines_per_page
+            
             if i >= len(lines):
                 break
-            c = prompt("--Press SPACE for next page, ENTER for one line, q to quit-- ")
-            if c.lower() == "q":
+            
+            response = prompt("--Press SPACE for next, ENTER for one line, q to quit--: ")
+            
+            if response.lower() == "q":
                 break
-            if c == "":
+            elif response == "":
                 if i < len(lines):
                     print(lines[i])
                     i += 1
-            else:
-                continue

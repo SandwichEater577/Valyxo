@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Valyxo Projects - Manage and organize all your development projects">
+    <title>Projects - Valyxo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <svg width="160" height="40" viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="valyxoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#d4af37" />
+                                <stop offset="50%" stop-color="#f4a460" />
+                                <stop offset="100%" stop-color="#daa520" />
+                            </linearGradient>
+                        </defs>
+                        <g transform="translate(6,10)">
+                            <path d="M0 0 L10 30 L20 0" fill="none" stroke="url(#valyxoGradient)" stroke-width="3.5" stroke-linecap="round" />
+                            <path d="M26 0 L40 30 M40 0 L26 30" stroke="url(#valyxoGradient)" stroke-width="3.5" stroke-linecap="round" />
+                        </g>
+                        <text x="64" y="38" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="700" fill="url(#valyxoGradient)">VALYXO</text>
+                    </svg>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="index.html" class="btn btn-primary">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="projects-container">
+        <div class="container">
+            <h1>📁 My Projects</h1>
+            
+            <div class="projects-header">
+                <p style="font-size: 18px; margin: 0;">You have <strong>5 projects</strong> in your workspace</p>
+                <button class="btn btn-primary" onclick="alert('Create Project functionality coming soon!')">+ Create New Project</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>🌐 WebApp</h3>
+                    <p class="project-desc">A modern web application built with Valyxo. Full-stack development with reactive components and state management.</p>
+                    <div class="project-meta">
+                        <span class="date">📅 Created 2 days ago</span>
+                        <span class="status" style="background-color: rgba(123, 255, 178, 0.2); color: #7cffb2;">✓ Active</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>💻 CLI Tool</h3>
+                    <p class="project-desc">Command-line utility using ValyxoScript. Automate repetitive tasks and build powerful terminal applications.</p>
+                    <div class="project-meta">
+                        <span class="date">📅 Created 1 week ago</span>
+                        <span class="status" style="background-color: rgba(123, 255, 178, 0.2); color: #7cffb2;">✓ Active</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>📊 Data Parser</h3>
+                    <p class="project-desc">Parse and process structured data with built-in validation. Handle JSON, CSV, and custom formats efficiently.</p>
+                    <div class="project-meta">
+                        <span class="date">📅 Created 2 weeks ago</span>
+                        <span class="status" style="background-color: rgba(255, 107, 107, 0.2); color: #ff6b6b;">📦 Archived</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🔌 API Server</h3>
+                    <p class="project-desc">RESTful API server implementation with authentication, rate limiting, and comprehensive documentation.</p>
+                    <div class="project-meta">
+                        <span class="date">📅 Created 3 weeks ago</span>
+                        <span class="status" style="background-color: rgba(123, 255, 178, 0.2); color: #7cffb2;">✓ Active</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>✅ Testing Suite</h3>
+                    <p class="project-desc">Comprehensive testing framework with unit, integration, and end-to-end testing capabilities.</p>
+                    <div class="project-meta">
+                        <span class="date">📅 Created 1 month ago</span>
+                        <span class="status" style="background-color: rgba(123, 255, 178, 0.2); color: #7cffb2;">✓ Active</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🤖 AI Assistant</h3>
+                    <p class="project-desc">Integration with Zencoder AI for intelligent code suggestions, bug detection, and optimization recommendations.</p>
+                    <div class="project-meta">
+                        <span class="date">📅 Created 5 days ago</span>
+                        <span class="status" style="background-color: rgba(255, 217, 61, 0.2); color: #ffd93d;">⏳ In Progress</span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="cta" style="margin-top: 50px;">
+                <div class="container">
+                    <h2>Need Help Getting Started?</h2>
+                    <p>Check out our documentation and tutorials to learn more about Valyxo</p>
+                    <a href="docs.html" class="btn btn-primary btn-large">View Documentation</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Valyxo</h4>
+                    <p>Complete developer ecosystem for modern software development.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="api.html">API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Valyxo. All rights reserved. | Version 0.41</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>

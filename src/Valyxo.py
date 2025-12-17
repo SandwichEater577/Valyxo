@@ -1,19 +1,27 @@
 #!/usr/bin/env python3
-"""Valyxo v0.31 - Terminal Developer Ecosystem powered by ValyxoScript and ValyxoGPT
+"""Valyxo v0.41 - Terminal Developer Ecosystem.
 
-Modular Architecture:
- - valyxo.core: Colors, constants, utilities, and core managers
- - valyxo.core.filesystem: File system operations (ValyxoFileSystem)
- - valyxo.core.gpt: GPT module (ValyxoGPTModule)
- - valyxo.core.jobs: Job management (ValyxoJobsManager)
- - valyxo.core.man: Manual system (ValyxoManSystem)
+Professional development environment combining terminal CLI, AI assistance,
+and scripting language. Powered by ValyxoScript and ValyxoGPT (Zencoder).
+
+Architecture:
+ - valyxo.core: Core modules and managers
+   - colors: Terminal color codes
+   - constants: Application configuration
+   - utils: Utility functions
+   - filesystem: File operations (ValyxoFileSystem)
+   - gpt: AI Assistant (ValyxoGPTModule)
+   - jobs: Job management (ValyxoJobsManager)
+   - man: Help system (ValyxoManSystem)
  - valyxo.shell: Shell interface
+ - valyxo.editor: Text editor
 
-Features:
- - Modular class-based design for maintainability and scalability
- - ValyxoGPT powered by Zencoder AI with multi-turn conversations
- - Smart Zencoder-based responses for coding help, debugging, testing, refactoring
- - Professional terminal-based development environment
+Key Features:
+ - Modular architecture with comprehensive type hints
+ - Full error handling with informative messages
+ - ValyxoScript: Lightweight programming language
+ - ValyxoGPT: AI-powered coding assistant
+ - Professional terminal interface
 """
 
 from valyxo.core import (
@@ -44,7 +52,12 @@ from valyxo.core import (
     ValyxoGPTModule,
     ValyxoJobsManager,
     ValyxoManSystem,
+    get_startup_banner,
+    get_welcome_message,
+    get_section_header,
+    get_info_banner,
 )
+from valyxo.script import ValyxoScriptRuntime
 
 try:
     import readline
@@ -74,7 +87,9 @@ class ValyxoShell:
         self.settings = DEFAULT_SETTINGS.copy()
 
     def run(self):
-        print(f"Welcome to {APP_NAME} {VERSION}")
+        print(get_startup_banner(self.settings))
+        print(get_welcome_message(APP_NAME, "0.41", self.settings))
+        print(get_info_banner("Type 'man Valyxo' for help or '-help' for commands", self.settings))
 
 
 shell = None

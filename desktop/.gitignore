@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+*.exe
+*.dmg
+*.AppImage
+*.deb
+*.zip
+.DS_Store
+*.log
+.env.local
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

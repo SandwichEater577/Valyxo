@@ -1,23 +1,24 @@
 import os
+from typing import Dict, List, Any
 
-APP_NAME = "Valyxo"
-VERSION = "Valyxo v0.31 (Zencoder Integrated)"
+APP_NAME: str = "Valyxo"
+VERSION: str = "Valyxo v0.41 (Zencoder Integrated)"
 
-HOME = os.path.expanduser("~")
-ROOT_FOLDER_NAME = "ValyxoDocuments"
-ROOT_DIR = os.path.join(HOME, ROOT_FOLDER_NAME)
-PROJECTS_DIR = os.path.join(ROOT_DIR, "Projects")
-SYSTEM_DIR = os.path.join(ROOT_DIR, "System")
-CONFIG_DIR = os.path.join(ROOT_DIR, "Config")
-MAN_DIR = os.path.join(SYSTEM_DIR, "man")
-MAIN_PROJECT = os.path.join(PROJECTS_DIR, "Main")
+HOME: str = os.path.expanduser("~")
+ROOT_FOLDER_NAME: str = "ValyxoDocuments"
+ROOT_DIR: str = os.path.join(HOME, ROOT_FOLDER_NAME)
+PROJECTS_DIR: str = os.path.join(ROOT_DIR, "Projects")
+SYSTEM_DIR: str = os.path.join(ROOT_DIR, "System")
+CONFIG_DIR: str = os.path.join(ROOT_DIR, "Config")
+MAN_DIR: str = os.path.join(SYSTEM_DIR, "man")
+MAIN_PROJECT: str = os.path.join(PROJECTS_DIR, "Main")
 
-CONFIG_PATH = os.path.join(CONFIG_DIR, "config.json")
-THEMES_PATH = os.path.join(CONFIG_DIR, "themes.json")
-HISTORY_PATH = os.path.join(SYSTEM_DIR, "history.txt")
-API_KEY_PATH = os.path.join(CONFIG_DIR, "api_key.txt")
+CONFIG_PATH: str = os.path.join(CONFIG_DIR, "config.json")
+THEMES_PATH: str = os.path.join(CONFIG_DIR, "themes.json")
+HISTORY_PATH: str = os.path.join(SYSTEM_DIR, "history.txt")
+API_KEY_PATH: str = os.path.join(CONFIG_DIR, "api_key.txt")
 
-COMMANDS = [
+COMMANDS: List[str] = [
     "enter ValyxoScript",
     "enter VScript",
     "enter ValyxoGPT",
@@ -39,15 +40,24 @@ COMMANDS = [
     "quit",
 ]
 
-LANG_MAP = {
-    "vs": ".vs", "valyxoscript": ".vs", "valyx": ".vs", "vscript": ".vs",
+LANG_MAP: Dict[str, str] = {
+    "vs": ".vs",
+    "valyxoscript": ".vs",
+    "valyx": ".vs",
+    "vscript": ".vs",
     ".vs": ".vs",
-    "js": ".js", "javascript": ".js", "node": ".js", ".js": ".js",
-    "python": ".py", "py": ".py", ".py": ".py",
-    "java": ".java", ".java": ".java",
+    "js": ".js",
+    "javascript": ".js",
+    "node": ".js",
+    ".js": ".js",
+    "python": ".py",
+    "py": ".py",
+    ".py": ".py",
+    "java": ".java",
+    ".java": ".java",
 }
 
-DEFAULT_SETTINGS = {
+DEFAULT_SETTINGS: Dict[str, Any] = {
     "suggestions": True,
     "colors": True,
     "start_cwd": MAIN_PROJECT,

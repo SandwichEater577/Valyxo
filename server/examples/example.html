@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valyxo API Client Example</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #7cffb2;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .card h2 {
+      color: #5ed9ff;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: #7cffb2;
+      color: #0a0e27;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      margin: 5px 5px 5px 0;
+      transition: opacity 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #333;
+      border-radius: 4px;
+      color: #e0e0e0;
+      font-family: inherit;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #999;
+    }
+
+    .output {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 12px;
+      margin-top: 12px;
+      max-height: 300px;
+      overflow-y: auto;
+      font-size: 12px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .success {
+      color: #7cffb2;
+    }
+
+    .error {
+      color: #ff6b6b;
+    }
+
+    .info {
+      color: #5ed9ff;
+    }
+
+    .divider {
+      height: 1px;
+      background: #333;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Valyxo API Client Example</h1>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Authentication</h2>
+        
+        <input type="text" id="registerUsername" placeholder="Username">
+        <input type="email" id="registerEmail" placeholder="Email">
+        <input type="password" id="registerPassword" placeholder="Password">
+        <button onclick="register()">Register</button>
+
+        <div class="divider"></div>
+
+        <input type="text" id="loginUsername" placeholder="Username">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+
+        <button onclick="logout()" style="margin-top: 10px;">Logout</button>
+        <button onclick="getCurrentUser()">Get Current User</button>
+
+        <div id="authOutput" class="output"></div>
+      </div>
+
+      <div class="card">
+        <h2>Projects</h2>
+
+        <input type="text" id="projectName" placeholder="Project name">
+        <input type="text" id="projectDescription" placeholder="Description">
+        <button onclick="createProject()">Create Project</button>
+
+        <button onclick="getProjects()" style="margin-top: 10px;">Get All Projects</button>
+
+        <div id="projectOutput" class="output"></div>
+      </div>
+
+      <div class="card">
+        <h2>Scripts</h2>
+
+        <input type="number" id="projectIdForScript" placeholder="Project ID">
+        <input type="text" id="scriptName" placeholder="Script name">
+        <textarea id="scriptContent" placeholder="Script content" rows="4"></textarea>
+        <button onclick="createScript()">Create Script</button>
+
+        <button onclick="getProjectScripts()" style="margin-top: 10px;">Get Project Scripts</button>
+
+        <div id="scriptOutput" class="output"></div>
+      </div>
+
+      <div class="card">
+        <h2>Script Execution</h2>
+
+        <input type="number" id="scriptIdToExecute" placeholder="Script ID">
+        <button onclick="executeScript()">Execute Script</button>
+
+        <button onclick="getExecutionHistory()" style="margin-top: 10px;">Get Execution History</button>
+
+        <div id="executionOutput" class="output"></div>
+      </div>
+
+      <div class="card">
+        <h2>User Profile</h2>
+
+        <button onclick="getUserProfile()">Get Profile</button>
+        <button onclick="getUserStats()">Get Statistics</button>
+
+        <input type="text" id="newUsername" placeholder="New username" style="margin-top: 10px;">
+        <input type="email" id="newEmail" placeholder="New email">
+        <button onclick="updateProfile()">Update Profile</button>
+
+        <div id="profileOutput" class="output"></div>
+      </div>
+
+      <div class="card">
+        <h2>Quick Test</h2>
+
+        <p style="font-size: 12px; margin-bottom: 10px;">Run a full test workflow to verify API connection.</p>
+        <button onclick="runQuickTest()">Run Quick Test</button>
+
+        <div id="testOutput" class="output"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="client.js"></script>
+  <script>
+    const client = new ValyxoClient();
+    let currentProjectId = null;
+    let currentScriptId = null;
+
+    function log(element, message, type = 'info') {
+      const output = document.getElementById(element);
+      const timestamp = new Date().toLocaleTimeString();
+      const color = type === 'success' ? 'success' : type === 'error' ? 'error' : 'info';
+      output.innerHTML += `<div class="${color}">[${timestamp}] ${message}</div>`;
+      output.scrollTop = output.scrollHeight;
+    }
+
+    async function register() {
+      try {
+        const username = document.getElementById('registerUsername').value;
+        const email = document.getElementById('registerEmail').value;
+        const password = document.getElementById('registerPassword').value;
+
+        const result = await client.register(username, email, password);
+        log('authOutput', `Registered as ${result.user.username}`, 'success');
+      } catch (error) {
+        log('authOutput', `Registration failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function login() {
+      try {
+        const username = document.getElementById('loginUsername').value;
+        const password = document.getElementById('loginPassword').value;
+
+        const result = await client.login(username, password);
+        log('authOutput', `Logged in as ${result.user.username}`, 'success');
+      } catch (error) {
+        log('authOutput', `Login failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function logout() {
+      try {
+        await client.logout();
+        log('authOutput', 'Logged out successfully', 'success');
+      } catch (error) {
+        log('authOutput', `Logout failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function getCurrentUser() {
+      try {
+        const result = await client.getCurrentUser();
+        log('authOutput', `Current user: ${JSON.stringify(result.user)}`, 'success');
+      } catch (error) {
+        log('authOutput', `Failed to get user: ${error.message}`, 'error');
+      }
+    }
+
+    async function createProject() {
+      try {
+        const name = document.getElementById('projectName').value;
+        const description = document.getElementById('projectDescription').value;
+
+        const result = await client.createProject(name, description);
+        currentProjectId = result.data.id;
+        document.getElementById('projectIdForScript').value = currentProjectId;
+        log('projectOutput', `Project created: ${result.data.name} (ID: ${currentProjectId})`, 'success');
+      } catch (error) {
+        log('projectOutput', `Create project failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function getProjects() {
+      try {
+        const result = await client.getProjects();
+        log('projectOutput', `Found ${result.data.length} projects`, 'success');
+        result.data.forEach(p => {
+          log('projectOutput', `- ${p.name} (ID: ${p.id})`, 'info');
+        });
+      } catch (error) {
+        log('projectOutput', `Get projects failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function createScript() {
+      try {
+        const projectId = document.getElementById('projectIdForScript').value;
+        const name = document.getElementById('scriptName').value;
+        const content = document.getElementById('scriptContent').value;
+
+        const result = await client.createScript(projectId, name, content);
+        currentScriptId = result.data.id;
+        document.getElementById('scriptIdToExecute').value = currentScriptId;
+        log('scriptOutput', `Script created: ${result.data.name} (ID: ${currentScriptId})`, 'success');
+      } catch (error) {
+        log('scriptOutput', `Create script failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function getProjectScripts() {
+      try {
+        const projectId = document.getElementById('projectIdForScript').value;
+        const result = await client.getProjectScripts(projectId);
+        log('scriptOutput', `Found ${result.data.length} scripts`, 'success');
+        result.data.forEach(s => {
+          log('scriptOutput', `- ${s.name} (ID: ${s.id})`, 'info');
+        });
+      } catch (error) {
+        log('scriptOutput', `Get scripts failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function executeScript() {
+      try {
+        const scriptId = document.getElementById('scriptIdToExecute').value;
+        const result = await client.executeScript(scriptId);
+        log('executionOutput', `Script executed (${result.data.execution_time_ms}ms)`, 'success');
+        log('executionOutput', `Output: ${result.data.output}`, 'info');
+      } catch (error) {
+        log('executionOutput', `Execute failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function getExecutionHistory() {
+      try {
+        const scriptId = document.getElementById('scriptIdToExecute').value;
+        const result = await client.getScriptExecutions(scriptId);
+        log('executionOutput', `Found ${result.data.length} executions`, 'success');
+        result.data.slice(0, 5).forEach(e => {
+          log('executionOutput', `- Status: ${e.status}, Time: ${e.execution_time_ms}ms`, 'info');
+        });
+      } catch (error) {
+        log('executionOutput', `Get history failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function getUserProfile() {
+      try {
+        const result = await client.getUserProfile();
+        log('profileOutput', `Profile: ${result.user.username} (${result.user.email})`, 'success');
+        log('profileOutput', `Projects: ${result.user.projectCount}, Scripts: ${result.user.scriptCount}`, 'info');
+      } catch (error) {
+        log('profileOutput', `Get profile failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function getUserStats() {
+      try {
+        const result = await client.getUserStats();
+        log('profileOutput', `Stats: ${JSON.stringify(result.stats)}`, 'success');
+      } catch (error) {
+        log('profileOutput', `Get stats failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function updateProfile() {
+      try {
+        const username = document.getElementById('newUsername').value;
+        const email = document.getElementById('newEmail').value;
+
+        await client.updateProfile(username, email);
+        log('profileOutput', 'Profile updated successfully', 'success');
+      } catch (error) {
+        log('profileOutput', `Update failed: ${error.message}`, 'error');
+      }
+    }
+
+    async function runQuickTest() {
+      try {
+        log('testOutput', 'Starting quick test...', 'info');
+
+        const username = 'testuser_' + Date.now();
+        const email = `test_${Date.now()}@example.com`;
+        
+        log('testOutput', 'Registering user...', 'info');
+        const reg = await client.register(username, email, 'TestPass123');
+        log('testOutput', 'User registered', 'success');
+
+        log('testOutput', 'Creating project...', 'info');
+        const proj = await client.createProject('TestProj', 'Test');
+        log('testOutput', 'Project created', 'success');
+
+        log('testOutput', 'Creating script...', 'info');
+        const scr = await client.createScript(proj.data.id, 'Test', 'print "ok"');
+        log('testOutput', 'Script created', 'success');
+
+        log('testOutput', 'Executing script...', 'info');
+        const exec = await client.executeScript(scr.data.id);
+        log('testOutput', `Script executed in ${exec.data.execution_time_ms}ms`, 'success');
+
+        log('testOutput', 'Getting stats...', 'info');
+        const stats = await client.getUserStats();
+        log('testOutput', 'Stats retrieved', 'success');
+
+        log('testOutput', 'Quick test completed successfully!', 'success');
+      } catch (error) {
+        log('testOutput', `Test failed: ${error.message}`, 'error');
+      }
+    }
+
+    log('authOutput', 'Valyxo API Client ready', 'success');
+  </script>
+</body>
+</html>

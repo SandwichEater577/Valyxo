@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Valyxo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">Valyxo</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contact-container">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p class="subtitle">Get in touch with the Valyxo team</p>
+
+            <div class="contact-content">
+                <section class="contact-form-section">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </section>
+
+                <section class="contact-info-section">
+                    <h2>Contact Information</h2>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <h3>Email</h3>
+                            <p><a href="mailto:contact@valyxo.dev">contact@valyxo.dev</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Security Issues</h3>
+                            <p><a href="mailto:security@valyxo.dev">security@valyxo.dev</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Community</h3>
+                            <p><a href="community.html">Join our community</a></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Valyxo. All rights reserved. | Version 0.41</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference - Valyxo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">Valyxo</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="api.html" class="active">API</a></li>
+                <li><a href="security.html">Security</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="api-container">
+        <div class="container">
+            <h1>API Reference</h1>
+            <p class="subtitle">REST API documentation for Valyxo</p>
+
+            <section class="api-section">
+                <h2>Authentication</h2>
+                <p>All API requests require authentication via JWT token.</p>
+                <div class="code-block">
+                    <code>Authorization: Bearer YOUR_JWT_TOKEN</code>
+                </div>
+            </section>
+
+            <section class="api-section">
+                <h2>Projects Endpoint</h2>
+                <div class="endpoint">
+                    <h3>GET /api/projects</h3>
+                    <p>List all projects</p>
+                    <p class="response">Response: 200 OK</p>
+                </div>
+
+                <div class="endpoint">
+                    <h3>POST /api/projects</h3>
+                    <p>Create a new project</p>
+                    <p class="response">Response: 201 Created</p>
+                </div>
+
+                <div class="endpoint">
+                    <h3>GET /api/projects/:id</h3>
+                    <p>Get project details</p>
+                    <p class="response">Response: 200 OK</p>
+                </div>
+            </section>
+
+            <section class="api-section">
+                <h2>Scripts Endpoint</h2>
+                <div class="endpoint">
+                    <h3>GET /api/scripts</h3>
+                    <p>List all scripts</p>
+                    <p class="response">Response: 200 OK</p>
+                </div>
+
+                <div class="endpoint">
+                    <h3>POST /api/scripts</h3>
+                    <p>Create a new script</p>
+                    <p class="response">Response: 201 Created</p>
+                </div>
+
+                <div class="endpoint">
+                    <h3>POST /api/scripts/:id/run</h3>
+                    <p>Execute a script</p>
+                    <p class="response">Response: 200 OK</p>
+                </div>
+            </section>
+
+            <div class="cta">
+                <a href="docs.html" class="btn btn-primary">View Full Documentation</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Valyxo. All rights reserved. | Version 0.41</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

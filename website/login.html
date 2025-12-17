@@ -1,81 +1,49 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login — Valyxo</title>
+    <title>Login - Valyxo</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/theme.css">
 </head>
-<body class="dark-theme auth-page">
+<body>
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <a href="index.html"><span class="logo-text">⚡ VALYXO</span></a>
+                <a href="index.html" class="logo">Valyxo</a>
             </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
         </div>
     </nav>
 
-    <div class="auth-container">
-        <div class="auth-card">
-            <h1>Welcome Back</h1>
-            <p>Sign in to your Valyxo account</p>
-
-            <form id="loginForm" class="auth-form">
+    <main class="auth-container">
+        <div class="auth-form">
+            <h1>Login</h1>
+            <form>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                    <input type="email" id="email" name="email" required>
                 </div>
-
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                    <input type="password" id="password" name="password" required>
                 </div>
-
-                <div class="form-group checkbox">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Remember me</label>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
+            <p class="form-footer">Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </main>
 
-            <div class="auth-footer">
-                <p>Don't have an account? <a href="register.html">Sign up here</a></p>
-                <p><a href="#">Forgot password?</a></p>
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Valyxo. All rights reserved. | Version 0.41</p>
             </div>
         </div>
-    </div>
-
-    <script src="js/auth.js"></script>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            try {
-                const response = await fetch('/api/auth/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('user', JSON.stringify(data.user));
-                    window.location.href = 'dashboard.html';
-                } else {
-                    alert(data.message || 'Login failed');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again.');
-            }
-        });
-    </script>
+    </footer>
 </body>
 </html>

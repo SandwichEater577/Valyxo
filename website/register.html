@@ -1,96 +1,57 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register — Valyxo</title>
+    <title>Register - Valyxo</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/theme.css">
 </head>
-<body class="dark-theme auth-page">
+<body>
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <a href="index.html"><span class="logo-text">⚡ VALYXO</span></a>
+                <a href="index.html" class="logo">Valyxo</a>
             </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
         </div>
     </nav>
 
-    <div class="auth-container">
-        <div class="auth-card">
-            <h1>Join Valyxo</h1>
-            <p>Create your account and start building</p>
-
-            <form id="registerForm" class="auth-form">
+    <main class="auth-container">
+        <div class="auth-form">
+            <h1>Register</h1>
+            <form>
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required placeholder="your_username">
+                    <input type="text" id="username" name="username" required>
                 </div>
-
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                    <input type="email" id="email" name="email" required>
                 </div>
-
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                    <input type="password" id="password" name="password" required>
                 </div>
-
                 <div class="form-group">
                     <label for="confirm">Confirm Password</label>
-                    <input type="password" id="confirm" name="confirm" required placeholder="••••••••">
+                    <input type="password" id="confirm" name="confirm" required>
                 </div>
-
-                <div class="form-group checkbox">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">I agree to Terms & Conditions</label>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                <button type="submit" class="btn btn-primary">Register</button>
             </form>
+            <p class="form-footer">Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+    </main>
 
-            <div class="auth-footer">
-                <p>Already have an account? <a href="login.html">Sign in here</a></p>
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Valyxo. All rights reserved. | Version 0.41</p>
             </div>
         </div>
-    </div>
-
-    <script src="js/auth.js"></script>
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirm = document.getElementById('confirm').value;
-
-            if (password !== confirm) {
-                alert('Passwords do not match');
-                return;
-            }
-
-            try {
-                const response = await fetch('/api/auth/register', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, email, password })
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    alert('Account created successfully! Redirecting to login...');
-                    window.location.href = 'login.html';
-                } else {
-                    alert(data.message || 'Registration failed');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again.');
-            }
-        });
-    </script>
+    </footer>
 </body>
 </html>

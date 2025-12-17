@@ -1,4 +1,8 @@
+from typing import Optional, Dict, Any
+
+
 class Colors:
+    """ANSI color codes for terminal output."""
     RESET = "\033[0m"
     BOLD = "\033[1m"
     CYAN = "\033[96m"
@@ -14,7 +18,17 @@ class Colors:
     ACCENT = CYAN
 
 
-def color(txt, code, settings=None):
+def color(txt: str, code: str, settings: Optional[Dict[str, Any]] = None) -> str:
+    """Apply ANSI color code to text.
+    
+    Args:
+        txt: Text to colorize
+        code: ANSI color code
+        settings: Settings dict with 'colors' boolean (default: True)
+    
+    Returns:
+        Colorized text or plain text if colors disabled
+    """
     if settings and not settings.get("colors", True):
         return txt
     return f"{code}{txt}{Colors.RESET}"

@@ -1,177 +1,231 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Valyxo — The Developer's Ecosystem. Terminal CLI + AI Assistant + Modular Architecture">
-    <meta name="keywords" content="Valyxo, ValyxoHub, ValyxoScript, ValyxoGPT, Developer Tools, Terminal">
-    
-    <title>Valyxo — The Developer's Ecosystem</title>
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/theme.css">
-</head>
-<body class="dark-theme">
-    <!-- Navigation -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Valyxo - Complete Developer Ecosystem. Terminal CLI, Desktop Apps, Web Platform & AI Assistant."
+    />
+    <title>Valyxo - Developer Ecosystem</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="index.html">
-                    <span class="logo-text">⚡ VALYXO</span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="valyxohub.html">ValyxoHub</a></li>
-                <li><a href="valyxogpt.html">ValyxoGPT</a></li>
-                <li><a href="login.html" class="btn-login">Login</a></li>
-                <li><a href="register.html" class="btn-register">Register</a></li>
-            </ul>
+      <div class="container">
+        <div class="nav-brand">
+          <a href="index.html" class="logo">
+            <svg
+              width="220"
+              height="56"
+              viewBox="0 0 220 56"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Valyxo logo"
+            >
+              <defs>
+                <!-- Gradient -->
+                <linearGradient
+                  id="valyxoGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" stop-color="#d4af37" />
+                  <stop offset="50%" stop-color="#f4a460" />
+                  <stop offset="100%" stop-color="#daa520" />
+                </linearGradient>
+
+                <!-- Glow -->
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+                  <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Symbol (V + X abstract) -->
+              <g transform="translate(6,10)" filter="url(#glow)">
+                <path
+                  d="M0 0 L10 30 L20 0"
+                  fill="none"
+                  stroke="url(#valyxoGradient)"
+                  stroke-width="3.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M26 0 L40 30 M40 0 L26 30"
+                  stroke="url(#valyxoGradient)"
+                  stroke-width="3.5"
+                  stroke-linecap="round"
+                />
+              </g>
+
+              <!-- Text -->
+              <text
+                x="64"
+                y="38"
+                font-family="Inter, Segoe UI, system-ui, sans-serif"
+                font-size="30"
+                font-weight="700"
+                letter-spacing="1.5"
+                fill="url(#valyxoGradient)"
+              >
+                VALYXO
+              </text>
+            </svg>
+          </a>
         </div>
+        <ul class="nav-menu">
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="hub.html">ValyxoHub</a></li>
+          <li><a href="script.html">ValyxoScript</a></li>
+          <li><a href="docs.html">Docs</a></li>
+          <li><a href="api.html">API</a></li>
+          <li><a href="login.html" class="btn-primary">Login</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="ascii-art">
-                    <pre>
-     ██    ██  █████  ██       █████  ██   ██  ██████  
-     ██    ██ ██   ██ ██      ██   ██  ██ ██  ██    ██ 
-     ██    ██ ███████ ██      ███████   ███   ██    ██ 
-     ██    ██ ██   ██ ██      ██   ██   ██    ██    ██ 
-      ██████  ██   ██ ███████ ██   ██   ██     ██████  
-                    </pre>
-                </div>
-                <h1>The Developer's Ecosystem</h1>
-                <p class="tagline">Terminal power + AI intelligence + Modular architecture</p>
-                
-                <div class="hero-buttons">
-                    <a href="register.html" class="btn btn-primary">Get Started</a>
-                    <a href="valyxohub.html" class="btn btn-secondary">Learn More</a>
-                </div>
-            </div>
-
-            <div class="hero-features">
-                <div class="feature-card">
-                    <span class="icon">⚙️</span>
-                    <h3>ValyxoHub</h3>
-                    <p>Terminal CLI for developers</p>
-                </div>
-                <div class="feature-card">
-                    <span class="icon">🤖</span>
-                    <h3>ValyxoGPT</h3>
-                    <p>AI-powered code assistant</p>
-                </div>
-                <div class="feature-card">
-                    <span class="icon">📚</span>
-                    <h3>ValyxoScript</h3>
-                    <p>Lightweight scripting language</p>
-                </div>
-            </div>
+      <div class="container">
+        <h1>Valyxo</h1>
+        <p class="subtitle">
+          Complete Developer Ecosystem for the 21st Century
+        </p>
+        <p class="description">
+          Terminal CLI + Desktop Apps + Web Platform + AI Assistant
+        </p>
+        <div class="hero-buttons">
+          <a href="docs.html" class="btn btn-primary">Get Started</a>
+          <a href="explore.html" class="btn btn-secondary">Explore</a>
         </div>
+      </div>
     </header>
 
-    <!-- Features Section -->
-    <section class="features-section">
+    <main>
+      <section class="features">
         <div class="container">
-            <h2>Why Choose Valyxo?</h2>
-            
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Lightning Fast</h3>
-                    <p>Optimized for speed and efficiency. Built with performance in mind.</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Modular Design</h3>
-                    <p>Clean architecture makes extending easy. Add features without clutter.</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Secure</h3>
-                    <p>Password hashing, input validation, HTTPS. Your code is safe.</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Cross-Platform</h3>
-                    <p>Works on Linux, Windows, and macOS. Develop anywhere.</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI-Powered</h3>
-                    <p>Integrated Zencoder AI for code suggestions and debugging.</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">💬</div>
-                    <h3>Community</h3>
-                    <p>Open source. Join developers building the future.</p>
-                </div>
+          <h2>⚡ Key Features</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <h3>🖥️ Terminal CLI</h3>
+              <p>
+                Professional development environment in your terminal.
+                Full-featured code editing and execution with real-time feedback.
+              </p>
             </div>
+            <div class="feature-card">
+              <h3>💻 Desktop Apps</h3>
+              <p>
+                Multi-language desktop applications. Java, C#, C++, and
+                JavaScript implementations with native performance.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>🤖 AI Assistant</h3>
+              <p>
+                Intelligent coding companion powered by Zencoder AI. Get help,
+                debug, and optimize code with AI-powered suggestions.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>📝 ValyxoScript</h3>
+              <p>
+                Lightweight scripting language designed for simplicity.
+                Python-like syntax with JavaScript flexibility and power.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>🌐 Web Platform</h3>
+              <p>
+                Complete web ecosystem for collaboration. Dashboard, projects,
+                and team management in one unified interface.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>🔒 Security First</h3>
+              <p>
+                Built with security as core principle. Hashing, validation,
+                encryption, and protection standards throughout.
+              </p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+      <section class="components">
         <div class="container">
-            <h2>Ready to Build?</h2>
-            <p>Join thousands of developers using Valyxo</p>
-            <a href="register.html" class="btn btn-primary btn-large">Start Free Today</a>
+          <h2>🎯 Core Components</h2>
+          <div class="components-grid">
+            <a href="hub.html" class="component-card">
+              <h3>⌨️ ValyxoHub</h3>
+              <p>Terminal CLI for developers • Full-powered command interface</p>
+            </a>
+            <a href="script.html" class="component-card">
+              <h3>📜 ValyxoScript</h3>
+              <p>Scripting language • Simple yet powerful execution engine</p>
+            </a>
+            <a href="gpt.html" class="component-card">
+              <h3>🧠 ValyxoGPT</h3>
+              <p>AI Assistant • Intelligent code companion</p>
+            </a>
+            <a href="app.html" class="component-card">
+              <h3>🚀 ValyxoApp</h3>
+              <p>Desktop Applications • Windows, Mac, Linux support</p>
+            </a>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+      <section class="cta">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Valyxo</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="docs.html">Documentation</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Community</h4>
-                    <ul>
-                        <li><a href="#">GitHub</a></li>
-                        <li><a href="#">Discord</a></li>
-                        <li><a href="#">Forum</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">License</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Terms</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>contact@valyxo.dev</p>
-                    <p>Made with ❤️ in Poland</p>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Valyxo Project. All rights reserved.</p>
-            </div>
+          <h2>🎉 Ready to Start?</h2>
+          <p>Download Valyxo and join thousands of developers building amazing things.</p>
+          <a href="docs.html" class="btn btn-primary btn-large"
+            >Get Started Now</a
+          >
         </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Valyxo</h4>
+            <p>Complete developer ecosystem for modern software development.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="docs.html">Documentation</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="roadmap.html">Roadmap</a></li>
+              <li><a href="api.html">API</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="community.html">Community</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="security.html">Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Valyxo. All rights reserved. | Version 0.41</p>
+        </div>
+      </div>
     </footer>
-
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

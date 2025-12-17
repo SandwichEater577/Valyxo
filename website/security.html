@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security - Valyxo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">Valyxo</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="api.html">API</a></li>
+                <li><a href="security.html" class="active">Security</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="security-container">
+        <div class="container">
+            <h1>Security</h1>
+            <p class="subtitle">Valyxo Security Practices and Policies</p>
+
+            <section class="security-section">
+                <h2>Security Features</h2>
+                <ul>
+                    <li>✅ Password Hashing — bcrypt/argon2</li>
+                    <li>✅ Input Validation — Sanitization of all user inputs</li>
+                    <li>✅ HTTPS — Encrypted communication</li>
+                    <li>✅ Secure Secrets — Environment variables, no plaintext</li>
+                    <li>✅ SQL Injection Protection — Parameterized queries</li>
+                    <li>✅ CSRF Protection — Token validation</li>
+                    <li>✅ XSS Prevention — Output escaping</li>
+                </ul>
+            </section>
+
+            <section class="security-section">
+                <h2>Reporting Security Issues</h2>
+                <p>If you discover a security vulnerability, please email security@valyxo.dev with details.</p>
+                <p>Do not publish the vulnerability publicly until we have had time to address it.</p>
+            </section>
+
+            <section class="security-section">
+                <h2>Data Privacy</h2>
+                <p>Your data is encrypted at rest and in transit. We never sell user data to third parties.</p>
+                <p>For more information, see our <a href="#">Privacy Policy</a>.</p>
+            </section>
+
+            <div class="cta">
+                <a href="contact.html" class="btn btn-primary">Contact Security Team</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Valyxo. All rights reserved. | Version 0.41</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
