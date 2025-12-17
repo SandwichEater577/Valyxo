@@ -132,9 +132,6 @@ const loadApplication = async () => {
   createWindow();
 
   mainWindow.loadURL(`${SERVER_HOST}`);
-  if (isDev) {
-    mainWindow.webContents.openDevTools();
-  }
 };
 
 const createTray = () => {

@@ -1,11 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
+  detectEnvironment();
   initializeNavigation();
   initializeCards();
   initializeButtons();
   initializeFormValidation();
   initializeTabs();
   initializeAnimations();
+  initializeRotatingText();
 });
+
+function detectEnvironment() {
+  const isApp = window.isApp || 
+                navigator.userAgent.includes('Valyxo') ||
+                window.electron ||
+                window.__ELECTRON__ ||
+                process?.type === 'renderer';
+  
+  window._isVaIyxoApp = isApp;
+  
+  if (isApp) {
+    document.body.classList.add('is-app');
+  }
+}
 
 function initializeNavigation() {
   const navLinks = document.querySelectorAll('.nav-menu a');
@@ -174,6 +190,52 @@ function smoothScroll(target) {
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
   }
+}
+
+function initializeRotatingText() {
+  const isApp = window._isVaIyxoApp;
+  
+  const phrases = isApp ? [
+    'Welcome to Valyxo App',
+    'Build with Terminal',
+    'Code from Anywhere',
+    'Desktop Power',
+    'Desktop First',
+    'Native Performance',
+    'Dev Tools Ready',
+    'Always On'
+  ] : [
+    'Welcome to our Website',
+    'Code Smarter',
+    'Build Faster',
+    'AI-Powered Development',
+    'Terminal First',
+    'Full Stack Ready',
+    'Open Source Love',
+    'Developer Friendly'
+  ];
+  
+  const rotatingText = document.getElementById('rotatingText');
+  if (!rotatingText) return;
+  
+  const span = rotatingText.querySelector('span');
+  if (!span) return;
+  
+  span.textContent = phrases[0];
+  
+  let currentIndex = 0;
+  
+  function updateText() {
+    span.style.animation = 'none';
+    
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % phrases.length;
+      span.textContent = phrases[currentIndex];
+      span.style.animation = 'shine 3s ease-in-out';
+    }, 50);
+  }
+  
+  setInterval(updateText, 3500);
 }
 
 window.showNotification = showNotification;
