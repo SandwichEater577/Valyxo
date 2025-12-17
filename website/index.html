@@ -1,9 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Valyxo — Terminal-first developer platform</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="site-header container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Valyxo</h1>
+      </div>
+      <nav class="nav" aria-label="Top">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="docs.html">Docs</a>
+        <a href="community.html">Community</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero card">
+        <div>
+          <h2>Terminal-first. Web-ready.</h2>
+          <p class="muted">
+            Valyxo brings a modern developer experience across terminal, desktop
+            and web — fast, secure, and delightful.
+          </p>
+          <div
+            style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap"
+          >
+            <a class="btn btn-primary" href="docs.html">Get Started</a>
+            <a class="btn btn-ghost" href="about.html">Learn More</a>
+          </div>
+        </div>
+        <aside class="card" style="padding: 18px">
+          <h3 style="margin-top: 0; margin-bottom: 8px">Latest Release</h3>
+          <p class="muted">
+            Version 0.41 — performance improvements, new shell features, and
+            security hardening.
+          </p>
+          <div style="margin-top: 12px"><span class="badge">Release</span></div>
+        </aside>
+      </section>
+
+      <section style="margin-top: 20px">
+        <h3 style="margin-bottom: 12px">Why Valyxo?</h3>
+        <div class="grid cols-3">
+          <div class="card">
+            <h4>Terminal-first</h4>
+            <p class="muted">
+              Powerful shell and scripting built with composability in mind.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Integrated Tools</h4>
+            <p class="muted">
+              Editors, package management, and deployment workflows unified.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Community-driven</h4>
+            <p class="muted">
+              Open contributions and security-focused development.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top: 20px">
+        <h3 style="margin-bottom: 12px">Get Involved</h3>
+        <div class="card">
+          <p class="muted">
+            Join the community, contribute to the docs, or open issues on our
+            repo. Valyxo grows fastest with real-world feedback.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p class="muted">&copy; 2025 Valyxo — Built with care. Version 0.41</p>
+      </div>
+    </footer>
+  </body>
 </html>
