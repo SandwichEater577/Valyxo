@@ -767,8 +767,9 @@ main {
   transition: transform 0.4s ease;
 }
 
-.feature-icon svg {
-  stroke: var(--text-primary);
+.feature-icon i {
+  font-size: 2rem;
+  color: var(--text-primary);
   opacity: 0.85;
 }
 
@@ -776,7 +777,7 @@ main {
   transform: scale(1.1);
 }
 
-.feature-card:hover .feature-icon svg {
+.feature-card:hover .feature-icon i {
   opacity: 1;
 }
 

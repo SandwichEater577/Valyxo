@@ -9,6 +9,7 @@
     />
     <title>Valyxo – Online</title>
     <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -235,11 +236,7 @@
         <div class="online-info">
           <div class="info-card">
             <h3>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-              </svg>
+              <i class="fi fi-rr-interrogation"></i>
               Getting Started
             </h3>
             <p>
@@ -249,10 +246,7 @@
           </div>
           <div class="info-card">
             <h3>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="4 17 10 11 4 5"></polyline>
-                <line x1="12" y1="19" x2="20" y2="19"></line>
-              </svg>
+              <i class="fi fi-rr-terminal"></i>
               Terminal Commands
             </h3>
             <p>
@@ -262,9 +256,7 @@
           </div>
           <div class="info-card">
             <h3>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-              </svg>
+              <i class="fi fi-rr-code-simple"></i>
               ValyxoScript
             </h3>
             <p>
@@ -413,7 +405,8 @@
       // Commands
       const commands = {
         "-help": () => {
-          printLine(`
+          printLine(
+            `
 ╭─ Valyxo v0.5.1 Commands ────────────────────────────────────╮
 │                                                             │
 │ Navigation & Files:                                         │
@@ -433,7 +426,9 @@
 │                                                             │
 │ Note: This is a browser demo. Download for full features.   │
 │                                                             │
-╰─────────────────────────────────────────────────────────────╯`, "info");
+╰─────────────────────────────────────────────────────────────╯`,
+            "info"
+          );
         },
 
         clear: () => {
@@ -444,7 +439,10 @@
           const path = args ? resolvePath(args) : cwd;
           const node = getNode(path);
           if (!node || node.type !== "dir") {
-            printLine(`ls: cannot access '${args}': No such directory`, "error");
+            printLine(
+              `ls: cannot access '${args}': No such directory`,
+              "error"
+            );
             return;
           }
           if (!node.children || Object.keys(node.children).length === 0) {
@@ -504,11 +502,17 @@
           const parentPath = "/" + parts.join("/");
           const parent = getNode(parentPath);
           if (!parent || parent.type !== "dir") {
-            printLine(`mkdir: cannot create '${args}': No such parent directory`, "error");
+            printLine(
+              `mkdir: cannot create '${args}': No such parent directory`,
+              "error"
+            );
             return;
           }
           if (parent.children[name]) {
-            printLine(`mkdir: cannot create '${args}': Already exists`, "error");
+            printLine(
+              `mkdir: cannot create '${args}': Already exists`,
+              "error"
+            );
             return;
           }
           parent.children[name] = { type: "dir", children: {} };
@@ -521,7 +525,10 @@
             return;
           }
           printLine("Note: Full editor available in desktop version.", "info");
-          printLine(`To create '${args}', use: echo "content" > ${args}`, "info");
+          printLine(
+            `To create '${args}', use: echo "content" > ${args}`,
+            "info"
+          );
         },
 
         run: (args) => {
@@ -550,7 +557,11 @@
               } else {
                 // Try to evaluate expression
                 try {
-                  const result = eval(val.replace(/(\w+)/g, (m) => vars[m] !== undefined ? vars[m] : m));
+                  const result = eval(
+                    val.replace(/(\w+)/g, (m) =>
+                      vars[m] !== undefined ? vars[m] : m
+                    )
+                  );
                   printLine(String(result), "success");
                 } catch {
                   printLine(val);
@@ -574,7 +585,10 @@
         man: (args) => {
           if (!args) {
             printLine("Usage: man <command>", "error");
-            printLine("Available: ls, cd, cat, mkdir, nano, run, valyxo", "info");
+            printLine(
+              "Available: ls, cd, cat, mkdir, nano, run, valyxo",
+              "info"
+            );
             return;
           }
           const manPages = {
@@ -600,7 +614,8 @@ AUTHOR
             ls: "ls - list directory contents\n\nUsage: ls [path]\n\nList files and directories in the current or specified path.",
             cd: "cd - change directory\n\nUsage: cd [path]\n\nChange the current working directory. Use '..' to go up.",
             cat: "cat - display file contents\n\nUsage: cat <file>\n\nDisplay the contents of a file.",
-            mkdir: "mkdir - create directory\n\nUsage: mkdir <name>\n\nCreate a new directory.",
+            mkdir:
+              "mkdir - create directory\n\nUsage: mkdir <name>\n\nCreate a new directory.",
             nano: "nano - text editor\n\nUsage: nano <file>\n\nEdit a file. Full editor available in desktop version.",
             run: "run - execute script\n\nUsage: run <file.ns>\n\nExecute a ValyxoScript file.",
           };
@@ -624,21 +639,29 @@ AUTHOR
         history.push(trimmed);
         historyIndex = history.length;
 
-        printHTML(`<span class="prompt">${promptText.textContent}</span>${trimmed}`);
+        printHTML(
+          `<span class="prompt">${promptText.textContent}</span>${trimmed}`
+        );
 
         const parts = trimmed.split(/\s+/);
         const cmd = parts[0].toLowerCase();
         const args = parts.slice(1).join(" ");
 
         if (cmd === "quit" || cmd === "exit") {
-          printLine("Use the browser to navigate away, or download the full app!", "info");
+          printLine(
+            "Use the browser to navigate away, or download the full app!",
+            "info"
+          );
           return;
         }
 
         if (commands[cmd]) {
           commands[cmd](args);
         } else {
-          printLine(`Command not found: ${cmd}. Type '-help' for available commands.`, "error");
+          printLine(
+            `Command not found: ${cmd}. Type '-help' for available commands.`,
+            "error"
+          );
         }
       }
 
