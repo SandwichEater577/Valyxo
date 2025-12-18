@@ -5,7 +5,7 @@ from .constants import API_KEY_PATH, CONFIG_DIR
 
 
 class ValyxoGPTModule:
-    """AI Assistant module for Valyxo v0.41, powered by Zencoder.
+    """AI Assistant module for Valyxo v0.5.1, powered by Zencoder.
     
     Manages conversation history and provides intelligent responses for
     coding assistance, debugging, and development guidance.
@@ -165,7 +165,7 @@ class ValyxoGPTModule:
             return "ValyxoScript printing: Use 'print variable' or 'print \"text\"' or 'print expression'. Multiple values: 'print a, b, c'."
         if "if" in lower or "condition" in lower:
             return "ValyxoScript conditionals: 'if [condition] then [cmd] else [cmd]' for inline, or 'if [condition] { body }' for blocks."
-        return "ValyxoScript v0.41: Lightweight language with variables, loops, functions, and control flow. Type: 'enter ValyxoScript' to start coding!"
+        return "ValyxoScript v0.5.1: Lightweight language with variables, loops, functions, and control flow. Type: 'enter ValyxoScript' to start coding!"
     
     def _respond_debugging(self, lower: str) -> str:
         """Generate debugging-specific response."""
@@ -198,7 +198,7 @@ class ValyxoGPTModule:
     def _respond_general(self, lower: str) -> str:
         """Generate general response."""
         if "hello" in lower or "hi" in lower or "hey" in lower:
-            return "Hello! I'm ValyxoGPT v0.41, powered by Zencoder. I help with code generation, debugging, refactoring, testing, and ValyxoScript guidance."
+            return "Hello! I'm ValyxoGPT v0.5.1, powered by Zencoder. I help with code generation, debugging, refactoring, testing, and ValyxoScript guidance."
         if any(word in lower for word in ["what", "how", "why", "explain", "understand"]):
             return "I can help explain: ValyxoScript syntax, coding concepts, debugging strategies, best practices, and development workflows."
         if "help" in lower or "?" in lower:

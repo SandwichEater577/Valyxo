@@ -25,7 +25,7 @@ func Load() *Config {
 		JWTExpire:        parseDuration(getEnv("JWT_EXPIRE", "168h")), // 7 days
 		DBPath:           getEnv("DB_PATH", "./data/valyxo.db"),
 		CORSOrigin:       getEnv("CORS_ORIGIN", "http://localhost:3000"),
-		APIVersion:       getEnv("API_VERSION", "0.41"),
+		APIVersion:       getEnv("API_VERSION", "0.5.1"),
 		Environment:      getEnv("NODE_ENV", "development"),
 		RateLimitGeneral: getEnvInt("RATE_LIMIT_GENERAL", 100),
 		RateLimitAuth:    getEnvInt("RATE_LIMIT_AUTH", 5),

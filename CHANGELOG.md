@@ -1,10 +1,46 @@
 # Valyxo Changelog
 
+## [v0.5.1] - 2025-01-XX
+
+### 🎉 Major Release - Website Integration
+
+#### **Desktop App Overhaul**
+
+- **Website Integration**: Desktop app now displays the Valyxo website directly
+- **Simplified Architecture**: Removed backend server dependency for cleaner experience
+- **Faster Startup**: No more waiting for server initialization
+- **Local File Navigation**: All pages load from bundled website assets
+
+#### **Beautiful New Website**
+
+- **Modern Dark Theme**: Sleek #0a0a0b background with blue accents
+- **Stunning Animations**: Mouse glow, gradient text, particle effects, tilt cards
+- **Terminal Typing Effect**: Realistic typing animation with blinking cursor
+- **Scroll Reveal**: Elegant fade-in animations on scroll
+- **TLauncher-Style Downloads**: OS tabs (Windows/macOS/Linux) on download page
+- **GitHub-Style Project Page**: Dynamic stats fetched from GitHub API
+
+#### **UI/UX Improvements**
+
+- **Button Animations**: Ripple, shine, and pulse effects
+- **Mouse Glow**: Subtle background glow that follows cursor
+- **Gradient Text**: Flowing blue-purple-cyan gradients
+- **Responsive Design**: Perfect on all screen sizes
+
+#### **New README**
+
+- **Clean Modern Design**: Badges, tables, and clear sections
+- **Quick Start Guide**: Easy installation instructions
+- **Project Structure**: Clear overview of codebase
+
+---
+
 ## [v0.41] - 2025-12-17
 
 ### 🎉 Major Features
 
 #### **ValyxoHub Terminal (Complete Rewrite)**
+
 - **New REPL Loop**: Fully functional interactive shell with proper command execution
 - **Enhanced Command Handling**: Refactored command dispatcher reducing if/else chains
 - **Improved Error Messages**: Clear, actionable error feedback with context and suggestions
@@ -14,6 +50,7 @@
 - **Theme Support**: Dynamic theme switching with `theme list|set` commands
 
 #### **ValyxoScript v0.41 (Major Language Improvements)**
+
 - **Better Error Reporting**: Line numbers, context, and helpful suggestions
 - **Custom Error Class**: `ValyxoScriptError` with detailed error information
 - **Improved Variable Management**: Enhanced type inference and validation
@@ -24,6 +61,7 @@
 - **Program Execution**: New `run_program()` method for file-based scripts
 
 #### **ValyxoGPT v0.41 (AI Assistant Overhaul)**
+
 - **Query Categorization**: Intelligent classification into 5 categories (ValyxoScript, debugging, performance, coding, general)
 - **Specialized Responses**: Category-specific response handlers with detailed guidance
 - **System Prompts**: Professional prompts for each category of assistance
@@ -32,6 +70,7 @@
 - **Better Debugging Responses**: Specific guidance for common issues
 
 #### **Web Platform Enhancements**
+
 - **New Sections**: Added stats and testimonials sections
 - **Enhanced CSS**: Professional styling for stats cards and testimonial cards
 - **Interactive Elements**: Hover effects and smooth transitions throughout
@@ -39,6 +78,7 @@
 - **Responsive Design**: Improved responsive behavior for all screen sizes
 
 #### **Desktop App (Electron)**
+
 - **Version Update**: Updated to v0.41.0
 - **Multi-Platform**: Confirmed support for Windows, macOS, and Linux
 - **Build Targets**: Proper configuration for all major platforms
@@ -55,6 +95,7 @@
 ### 📊 Built-in Commands
 
 New and improved commands in ValyxoHub:
+
 - `mkdir <path>` — Create directories
 - `ls [path]` — List files with emojis
 - `cd <path>` — Change directory with path validation
@@ -119,10 +160,12 @@ New and improved commands in ValyxoHub:
 ### 📦 Dependencies
 
 **Updated:**
+
 - ValyxoScript runtime with custom error handling
 - Enhanced error reporting system
 
 **Unchanged:**
+
 - Python 3.8+ required
 - Electron for desktop app
 - Node.js for backend

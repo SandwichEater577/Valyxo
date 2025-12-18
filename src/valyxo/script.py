@@ -24,7 +24,7 @@ class ValyxoScriptError(Exception):
 
 
 class ValyxoScriptRuntime:
-    """ValyxoScript v0.41 language runtime environment.
+    """ValyxoScript v0.5.1 language runtime environment.
     
     Provides execution of ValyxoScript programs with safe evaluation,
     variable management, control flow, and function definitions.

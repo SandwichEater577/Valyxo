@@ -2,7 +2,7 @@ import os
 from typing import Dict, List, Any
 
 APP_NAME: str = "Valyxo"
-VERSION: str = "Valyxo v0.41 (Zencoder Integrated)"
+VERSION: str = "Valyxo v0.5.1"
 
 HOME: str = os.getcwd()
 ROOT_FOLDER_NAME: str = "ValyxoDocuments"

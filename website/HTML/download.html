@@ -3,26 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Download Valyxo for Windows, macOS, and Linux"
+    />
     <title>Valyxo – Download</title>
     <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <nav>
-        <a href="index.html" class="logo"
-          ><img src="../Assets/logo-without-text.png" alt="Valyxo Logo" />
-          Valyxo</a
-        >
+        <a href="index.html" class="logo">
+          <img src="../Assets/logo-without-text.png" alt="Valyxo Logo" />
+          <span>Valyxo</span>
+        </a>
         <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="download.html">Download</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="download.html" class="active">Download</a></li>
+          <li><a href="project.html">Project</a></li>
         </ul>
       </nav>
     </header>
+
     <main>
       <div class="download-hero">
         <h1>Download Valyxo</h1>
-        <p>Get started with the next-generation platform</p>
+        <p>Available for Windows, macOS, and Linux</p>
       </div>
 
       <div class="download-modal">
@@ -41,7 +53,7 @@
               alt="macOS"
               class="os-icon"
             />
-            MacOS
+            macOS
           </button>
           <button class="os-tab" data-os="linux">
             <img
@@ -54,45 +66,49 @@
         </div>
 
         <div class="download-content">
+          <!-- Windows Panel -->
           <div class="os-panel active" id="windows">
             <div class="version-info">
-              <span class="version-tag">v0.41.0</span>
+              <span class="version-tag">v0.5.1</span>
               <span class="file-size">~85 MB</span>
             </div>
             <a
-              href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-Setup-0.41.0.exe"
+              href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-Setup-0.5.1.exe"
               class="download-main-btn"
               download
             >
               <div class="btn-content">
                 <span class="btn-title">Download for Windows</span>
-                <span class="btn-subtitle">Windows 10/11 (64-bit)</span>
+                <span class="btn-subtitle"
+                  >Windows 10/11 (64-bit) — Installer</span
+                >
               </div>
               <span class="download-icon">↓</span>
             </a>
             <div class="download-extras">
+              <a
+                href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-0.5.1-portable.exe"
+                class="extra-btn"
+                download
+                >Portable</a
+              >
               <a
                 href="https://github.com/SandwichEater577/Valyxo/releases"
                 target="_blank"
                 class="extra-btn"
                 >All Releases</a
               >
-              <a
-                href="https://github.com/SandwichEater577/Valyxo/issues"
-                target="_blank"
-                class="extra-btn"
-                >Report Issue</a
-              >
             </div>
           </div>
 
+          <!-- macOS Panel -->
           <div class="os-panel" id="macos">
             <div class="version-info">
-              <span class="version-tag">v0.41.0</span>
+              <span class="version-tag">v0.5.1</span>
               <span class="file-size">~90 MB</span>
             </div>
             <a
-              href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-0.41.0.dmg"
+              href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-0.5.1.dmg"
               class="download-main-btn"
               download
             >
@@ -106,27 +122,28 @@
             </a>
             <div class="download-extras">
               <a
+                href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-0.5.1-mac.zip"
+                class="extra-btn"
+                download
+                >.zip</a
+              >
+              <a
                 href="https://github.com/SandwichEater577/Valyxo/releases"
                 target="_blank"
                 class="extra-btn"
                 >All Releases</a
               >
-              <a
-                href="https://github.com/SandwichEater577/Valyxo/issues"
-                target="_blank"
-                class="extra-btn"
-                >Report Issue</a
-              >
             </div>
           </div>
 
+          <!-- Linux Panel -->
           <div class="os-panel" id="linux">
             <div class="version-info">
-              <span class="version-tag">v0.41.0</span>
+              <span class="version-tag">v0.5.1</span>
               <span class="file-size">~80 MB</span>
             </div>
             <a
-              href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-0.41.0.AppImage"
+              href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-0.5.1.AppImage"
               class="download-main-btn"
               download
             >
@@ -138,16 +155,10 @@
             </a>
             <div class="download-extras">
               <a
-                href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/valyxo_0.41.0_amd64.deb"
+                href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/valyxo_0.5.1_amd64.deb"
                 class="extra-btn"
                 download
                 >.deb</a
-              >
-              <a
-                href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-Linux.rpm"
-                class="extra-btn"
-                download
-                >.rpm</a
               >
               <a
                 href="https://github.com/SandwichEater577/Valyxo/releases"
@@ -166,21 +177,41 @@
         </div>
       </div>
     </main>
+
     <footer>
-      <div>&copy; 2025 Michał Kostkowski. All rights reserved.</div>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img
+            src="../Assets/logo-without-text.png"
+            alt="Valyxo"
+            class="footer-logo"
+          />
+          <span>Valyxo</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="download.html">Download</a>
+          <a href="project.html">Project</a>
+          <a href="https://github.com/SandwichEater577/Valyxo" target="_blank"
+            >GitHub</a
+          >
+        </nav>
+        <div class="footer-copy">
+          &copy; 2025 Michal Kostkowski. All rights reserved.
+        </div>
+      </div>
     </footer>
+
+    <script src="../JavaScript/animations.js"></script>
     <script>
       document.querySelectorAll(".os-tab").forEach((tab) => {
         tab.addEventListener("click", () => {
-          // Remove active from all tabs and panels
           document
             .querySelectorAll(".os-tab")
             .forEach((t) => t.classList.remove("active"));
           document
             .querySelectorAll(".os-panel")
             .forEach((p) => p.classList.remove("active"));
-
-          // Add active to clicked tab and corresponding panel
           tab.classList.add("active");
           document.getElementById(tab.dataset.os).classList.add("active");
         });

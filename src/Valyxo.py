@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Valyxo v0.41 - Terminal Developer Ecosystem.
+"""Valyxo v0.5.1 - Terminal Developer Ecosystem.
 
 Professional development environment combining terminal CLI, AI assistance,
 and scripting language. Powered by ValyxoScript and ValyxoGPT (Zencoder).
@@ -107,7 +107,7 @@ class ValyxoShell:
 
     def run(self):
         print(get_startup_banner(self.settings))
-        print(get_welcome_message(APP_NAME, "0.41", self.settings))
+        print(get_welcome_message(APP_NAME, "0.5.1", self.settings))
         print(get_info_banner("Type '-help' for commands or 'man Valyxo' for full help", self.settings))
         
         self.running = True
@@ -167,7 +167,7 @@ class ValyxoShell:
 
     def _show_help(self):
         help_text = """
-╭─ Valyxo v0.41 Commands ─────────────────────────────────────╮
+╭─ Valyxo v0.5.1 Commands ────────────────────────────────────╮
 │                                                             │
 │ Navigation & Files:                                         │
 │   cd <path>              Change directory                   │

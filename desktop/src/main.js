@@ -8,16 +8,18 @@ const {
 } = require("electron");
 const path = require("path");
 const fs = require("fs");
-const { spawn } = require("child_process");
 const isDev = !app.isPackaged;
 
 let mainWindow;
 let tray;
-let serverProcess;
-let serverReady = false;
 
-const SERVER_PORT = 5000;
-const SERVER_HOST = "http://localhost:5000";
+// Website path for loading the local website
+const getWebsitePath = () => {
+  if (isDev) {
+    return path.join(__dirname, "../../website/HTML");
+  }
+  return path.join(process.resourcesPath, "website/HTML");
+};
 
 const createWindow = () => {
   const iconPath = path.join(__dirname, "../assets/icon.png");
@@ -40,7 +42,7 @@ const createWindow = () => {
 
   mainWindow = new BrowserWindow(windowConfig);
 
-  mainWindow.webContents.userAgent = "Valyxo/0.41.0 (Desktop)";
+  mainWindow.webContents.userAgent = "Valyxo/0.5.1 (Desktop)";
 
   mainWindow.on("closed", () => {
     mainWindow = null;
@@ -54,84 +56,18 @@ const createWindow = () => {
     mainWindow.webContents.send("app-info", {
       version: app.getVersion(),
       platform: process.platform,
-      server: SERVER_HOST,
+      isDesktopApp: true,
     });
-  });
-};
-
-const startBackendServer = async () => {
-  return new Promise((resolve, reject) => {
-    const serverPath = path.join(__dirname, "../../server/src/server.js");
-
-    if (!fs.existsSync(serverPath)) {
-      console.error("Server file not found:", serverPath);
-      reject(new Error("Backend server not found"));
-      return;
-    }
-
-    serverProcess = spawn("node", [serverPath], {
-      env: {
-        ...process.env,
-        NODE_ENV: isDev ? "development" : "production",
-        PORT: SERVER_PORT,
-        DB_PATH: path.join(app.getPath("userData"), "valyxo.db"),
-      },
-      detached: false,
-      stdio: ["ignore", "pipe", "pipe"],
-    });
-
-    serverProcess.stdout.on("data", (data) => {
-      console.log(`[Backend] ${data.toString().trim()}`);
-    });
-
-    serverProcess.stderr.on("data", (data) => {
-      console.error(`[Backend Error] ${data.toString().trim()}`);
-    });
-
-    serverProcess.on("error", (err) => {
-      console.error("Failed to start backend server:", err);
-      reject(err);
-    });
-
-    let attempts = 0;
-    const checkServer = setInterval(() => {
-      attempts++;
-
-      fetch(`${SERVER_HOST}/health`)
-        .then(() => {
-          clearInterval(checkServer);
-          serverReady = true;
-          console.log("Backend server is ready");
-          resolve();
-        })
-        .catch(() => {
-          if (attempts > 30) {
-            clearInterval(checkServer);
-            reject(new Error("Backend server failed to start"));
-          }
-        });
-    }, 500);
-
-    setTimeout(() => {
-      clearInterval(checkServer);
-      if (!serverReady) {
-        reject(new Error("Backend server startup timeout"));
-      }
-    }, 15000);
   });
 };
 
 const loadApplication = async () => {
-  if (isDev) {
-    await startBackendServer().catch((err) => {
-      console.error("Failed to start backend:", err);
-      app.quit();
-    });
-  }
-
   createWindow();
 
-  mainWindow.loadURL(`${SERVER_HOST}`);
+  const websitePath = getWebsitePath();
+  const indexPath = path.join(websitePath, "index.html");
+
+  mainWindow.loadFile(indexPath);
 };
 
 const createTray = () => {
@@ -143,70 +79,74 @@ const createTray = () => {
     }
     tray = new Tray(iconPath);
 
-  const contextMenu = Menu.buildFromTemplate([
-    {
-      label: "Show",
-      click: () => {
-        if (mainWindow) {
-          mainWindow.show();
-        } else {
-          loadApplication();
-        }
+    const contextMenu = Menu.buildFromTemplate([
+      {
+        label: "Show",
+        click: () => {
+          if (mainWindow) {
+            mainWindow.show();
+          } else {
+            loadApplication();
+          }
+        },
       },
-    },
-    {
-      label: "Dashboard",
-      click: () => {
-        if (mainWindow) {
-          mainWindow.webContents.send("navigate", "/dashboard.html");
-          mainWindow.show();
-        }
+      {
+        label: "Dashboard",
+        click: () => {
+          if (mainWindow) {
+            const websitePath = getWebsitePath();
+            mainWindow.loadFile(path.join(websitePath, "dashboard.html"));
+            mainWindow.show();
+          }
+        },
       },
-    },
-    {
-      label: "Projects",
-      click: () => {
-        if (mainWindow) {
-          mainWindow.webContents.send("navigate", "/projects.html");
-          mainWindow.show();
-        }
+      {
+        label: "Projects",
+        click: () => {
+          if (mainWindow) {
+            const websitePath = getWebsitePath();
+            mainWindow.loadFile(path.join(websitePath, "projects.html"));
+            mainWindow.show();
+          }
+        },
       },
-    },
-    {
-      label: "API Docs",
-      click: () => {
-        if (mainWindow) {
-          mainWindow.webContents.send("navigate", `${SERVER_HOST}/api-docs`);
-          mainWindow.show();
-        }
+      {
+        label: "Documentation",
+        click: () => {
+          if (mainWindow) {
+            const websitePath = getWebsitePath();
+            mainWindow.loadFile(path.join(websitePath, "docs.html"));
+            mainWindow.show();
+          }
+        },
       },
-    },
-    { type: "separator" },
-    {
-      label: "Settings",
-      click: () => {
-        if (mainWindow) {
-          mainWindow.webContents.send("navigate", "/settings.html");
-          mainWindow.show();
-        }
+      { type: "separator" },
+      {
+        label: "Settings",
+        click: () => {
+          if (mainWindow) {
+            const websitePath = getWebsitePath();
+            mainWindow.loadFile(path.join(websitePath, "settings.html"));
+            mainWindow.show();
+          }
+        },
       },
-    },
-    {
-      label: "About",
-      click: () => {
-        if (mainWindow) {
-          mainWindow.webContents.send("show-about");
-        }
+      {
+        label: "About",
+        click: () => {
+          if (mainWindow) {
+            mainWindow.webContents.send("show-about");
+          }
+        },
       },
-    },
-    { type: "separator" },
-    {
-      label: "Exit",
-      click: () => {
-        app.quit();
+      { type: "separator" },
+      {
+        label: "Exit",
+        click: () => {
+          app.quit();
+        },
       },
-    },
-  ]);
+    ]);
 
     tray.setContextMenu(contextMenu);
     tray.setToolTip("Valyxo");
@@ -263,26 +203,29 @@ const createMenu = () => {
       label: "Tools",
       submenu: [
         {
-          label: "API Documentation",
+          label: "Documentation",
           click: () => {
             if (mainWindow) {
-              mainWindow.webContents.loadURL(`${SERVER_HOST}/api-docs`);
+              const websitePath = getWebsitePath();
+              mainWindow.loadFile(path.join(websitePath, "docs.html"));
             }
           },
         },
         {
-          label: "Server Health",
+          label: "API Reference",
           click: () => {
             if (mainWindow) {
-              mainWindow.webContents.loadURL(`${SERVER_HOST}/health`);
+              const websitePath = getWebsitePath();
+              mainWindow.loadFile(path.join(websitePath, "api.html"));
             }
           },
         },
         {
-          label: "Metrics",
+          label: "Changelog",
           click: () => {
             if (mainWindow) {
-              mainWindow.webContents.loadURL(`${SERVER_HOST}/metrics`);
+              const websitePath = getWebsitePath();
+              mainWindow.loadFile(path.join(websitePath, "changelog.html"));
             }
           },
         },
@@ -300,10 +243,11 @@ const createMenu = () => {
           },
         },
         {
-          label: "Documentation",
+          label: "Website",
           click: () => {
             if (mainWindow) {
-              mainWindow.webContents.loadURL(`${SERVER_HOST}/docs.html`);
+              const websitePath = getWebsitePath();
+              mainWindow.loadFile(path.join(websitePath, "index.html"));
             }
           },
         },
@@ -371,9 +315,7 @@ app.on("activate", () => {
 });
 
 app.on("quit", () => {
-  if (serverProcess) {
-    serverProcess.kill();
-  }
+  // Cleanup on quit
 });
 
 if (isDev) {
