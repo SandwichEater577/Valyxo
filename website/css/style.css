@@ -1472,6 +1472,11 @@ footer::before {
   box-shadow: none;
 }
 
+.tech-item i {
+  font-size: 24px;
+  color: var(--accent);
+}
+
 .tech-item span {
   font-size: 0.9rem;
   color: var(--text-secondary);
