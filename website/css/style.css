@@ -1395,6 +1395,15 @@ footer::before {
   margin: 32px 0 16px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+
+.readme-content h2 i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
 }
 
 .readme-content ul {
