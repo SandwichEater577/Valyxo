@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Why choose Valyxo? Discover the real reasons developers use this terminal-first platform."
+    />
+    <title>Why Valyxo? – Real Reasons to Use It</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .why-hero {
+        text-align: center;
+        padding: 60px 0 40px;
+      }
+
+      .why-hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 16px;
+      }
+
+      .why-hero p {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 24px;
+        padding: 40px 0 80px;
+      }
+
+      .reason-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px;
+        transition: all 0.3s ease;
+      }
+
+      .reason-card:hover {
+        border-color: rgba(74, 125, 184, 0.4);
+        transform: translateY(-4px);
+      }
+
+      .reason-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .reason-card h3 i {
+        color: var(--accent);
+        font-size: 1.4rem;
+      }
+
+      .reason-card p {
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+
+      .reason-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .reason-card li {
+        color: var(--text-secondary);
+        padding: 6px 0;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .reason-card li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
+      .honest-note {
+        background: rgba(74, 125, 184, 0.1);
+        border: 1px solid rgba(74, 125, 184, 0.3);
+        border-radius: 12px;
+        padding: 24px;
+        margin: 40px 0;
+        text-align: center;
+      }
+
+      .honest-note h3 {
+        color: var(--accent-light);
+        margin-bottom: 8px;
+      }
+
+      .honest-note p {
+        color: var(--text-secondary);
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">
+          <img src="../Assets/logo-without-text.png" alt="Valyxo Logo" />
+          <span>Valyxo</span>
+        </a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="why.html" class="active">Why Valyxo?</a></li>
+          <li><a href="online.html">Online</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="project.html">Project</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="why-hero">
+        <h1>Why <span class="gradient-text">Valyxo</span>?</h1>
+        <p>
+          No marketing fluff. Here's what Valyxo actually offers and why you
+          might find it useful.
+        </p>
+      </div>
+
+      <div class="honest-note">
+        <h3>Being Honest</h3>
+        <p>
+          Valyxo is a student project. It's not competing with VS Code or
+          professional IDEs. It's a learning project that became something
+          usable.
+        </p>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <h3><i class="fi fi-rr-graduation-cap"></i> Learning Project</h3>
+          <p>
+            Valyxo started as a school project to learn full-stack development.
+            The codebase covers:
+          </p>
+          <ul>
+            <li>Python for the terminal CLI</li>
+            <li>Electron for the desktop app</li>
+            <li>Go for the backend API</li>
+            <li>HTML/CSS/JS for the website</li>
+          </ul>
+        </div>
+
+        <div class="reason-card">
+          <h3><i class="fi fi-rr-terminal"></i> Actual Working Terminal</h3>
+          <p>The terminal isn't fake. It has real functionality:</p>
+          <ul>
+            <li>File system operations (ls, cd, mkdir, cat)</li>
+            <li>Job management and process control</li>
+            <li>Man pages with built-in help</li>
+            <li>Custom scripting language (ValyxoScript)</li>
+          </ul>
+        </div>
+
+        <div class="reason-card">
+          <h3><i class="fi fi-rr-code-simple"></i> ValyxoScript Language</h3>
+          <p>
+            A simple scripting language created from scratch. It's basic but
+            functional:
+          </p>
+          <ul>
+            <li>Variables and basic types</li>
+            <li>Functions and loops</li>
+            <li>Print statements and conditionals</li>
+            <li>Good for learning language design</li>
+          </ul>
+        </div>
+
+        <div class="reason-card">
+          <h3><i class="fi fi-rr-globe"></i> Cross-Platform Desktop App</h3>
+          <p>
+            Built with Electron, so it runs on Windows, macOS, and Linux.
+            Includes:
+          </p>
+          <ul>
+            <li>Custom titlebar and dark theme</li>
+            <li>System tray integration</li>
+            <li>Packaged installers for each platform</li>
+          </ul>
+        </div>
+
+        <div class="reason-card">
+          <h3><i class="fi fi-rr-unlock"></i> Fully Open Source</h3>
+          <p>The entire codebase is on GitHub under MIT license:</p>
+          <ul>
+            <li>Read and learn from the code</li>
+            <li>Fork and modify for your own projects</li>
+            <li>See how everything connects</li>
+            <li>No hidden functionality or tracking</li>
+          </ul>
+        </div>
+
+        <div class="reason-card">
+          <h3><i class="fi fi-rr-browser"></i> Try It Online</h3>
+          <p>
+            There's a web-based terminal demo where you can test commands
+            without installing anything:
+          </p>
+          <ul>
+            <li>Run ValyxoScript in the browser</li>
+            <li>Test basic terminal commands</li>
+            <li>See how the interface works</li>
+          </ul>
+        </div>
+
+        <div class="reason-card">
+          <h3><i class="fi fi-rr-document"></i> Documented</h3>
+          <p>The project includes actual documentation:</p>
+          <ul>
+            <li>Architecture overview</li>
+            <li>Quick start guides</li>
+            <li>Man pages for commands</li>
+            <li>Security audit notes</li>
+          </ul>
+        </div>
+
+        <div class="reason-card">
+          <h3><i class="fi fi-rr-paint-brush"></i> Clean Design</h3>
+          <p>Effort was put into making things look good:</p>
+          <ul>
+            <li>Consistent dark theme throughout</li>
+            <li>Responsive website design</li>
+            <li>Smooth animations</li>
+            <li>Modern UI patterns</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img
+            src="../Assets/logo-without-text.png"
+            alt="Valyxo"
+            class="footer-logo"
+          />
+          <span>Valyxo</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="why.html">Why Valyxo?</a>
+          <a href="online.html">Online</a>
+          <a href="download.html">Download</a>
+          <a href="project.html">Project</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://github.com/SandwichEater577/Valyxo" target="_blank"
+            >GitHub</a
+          >
+        </nav>
+        <div class="footer-copy">
+          &copy; 2025 Michal Kostkowski. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="../JavaScript/animations.js"></script>
+  </body>
+</html>
