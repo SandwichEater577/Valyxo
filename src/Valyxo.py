@@ -167,7 +167,7 @@ class ValyxoShell:
 
     def _show_help(self):
         help_text = """
-╭─ Valyxo v0.41 Commands ────────────────────────────────────╮
+╭─ Valyxo v0.41 Commands ─────────────────────────────────────╮
 │                                                             │
 │ Navigation & Files:                                         │
 │   cd <path>              Change directory                   │

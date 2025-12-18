@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valyxo – Download</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo"
+          ><img src="../Assets/logo-without-text.png" alt="Valyxo Logo" />
+          Valyxo</a
+        >
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="download.html">Download</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="download-hero">
+        <h1>Download Valyxo</h1>
+        <p>Get started with the next-generation platform</p>
+      </div>
+
+      <div class="download-modal">
+        <div class="os-tabs">
+          <button class="os-tab active" data-os="windows">
+            <img
+              src="../Assets/windows logo.png"
+              alt="Windows"
+              class="os-icon"
+            />
+            Windows
+          </button>
+          <button class="os-tab" data-os="macos">
+            <img src="../Assets/macOS logo.png" alt="macOS" class="os-icon" />
+            MacOS
+          </button>
+          <button class="os-tab" data-os="linux">
+            <img src="../Assets/linux.png" alt="Linux" class="os-icon" /> Linux
+          </button>
+        </div>
+
+        <div class="download-content">
+          <div class="os-panel active" id="windows">
+            <div class="version-info">
+              <span class="version-tag">v1.0.0</span>
+              <span class="file-size">~85 MB</span>
+            </div>
+            <a
+              href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-Setup-Windows.exe"
+              class="download-main-btn"
+              download
+            >
+              <div class="btn-content">
+                <span class="btn-title">Download for Windows</span>
+                <span class="btn-subtitle">Windows 10/11 (64-bit)</span>
+              </div>
+              <span class="download-icon">↓</span>
+            </a>
+            <div class="download-extras">
+              <a
+                href="https://github.com/SandwichEater577/Valyxo/releases"
+                target="_blank"
+                class="extra-btn"
+                >All Releases</a
+              >
+              <a
+                href="https://github.com/SandwichEater577/Valyxo/issues"
+                target="_blank"
+                class="extra-btn"
+                >Report Issue</a
+              >
+            </div>
+          </div>
+
+          <div class="os-panel" id="macos">
+            <div class="version-info">
+              <span class="version-tag">v1.0.0</span>
+              <span class="file-size">~90 MB</span>
+            </div>
+            <a
+              href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-macOS.dmg"
+              class="download-main-btn"
+              download
+            >
+              <div class="btn-content">
+                <span class="btn-title">Download for macOS</span>
+                <span class="btn-subtitle"
+                  >macOS 11+ (Intel & Apple Silicon)</span
+                >
+              </div>
+              <span class="download-icon">↓</span>
+            </a>
+            <div class="download-extras">
+              <a
+                href="https://github.com/SandwichEater577/Valyxo/releases"
+                target="_blank"
+                class="extra-btn"
+                >All Releases</a
+              >
+              <a
+                href="https://github.com/SandwichEater577/Valyxo/issues"
+                target="_blank"
+                class="extra-btn"
+                >Report Issue</a
+              >
+            </div>
+          </div>
+
+          <div class="os-panel" id="linux">
+            <div class="version-info">
+              <span class="version-tag">v1.0.0</span>
+              <span class="file-size">~80 MB</span>
+            </div>
+            <a
+              href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-Linux.AppImage"
+              class="download-main-btn"
+              download
+            >
+              <div class="btn-content">
+                <span class="btn-title">Download for Linux</span>
+                <span class="btn-subtitle">AppImage (Universal)</span>
+              </div>
+              <span class="download-icon">↓</span>
+            </a>
+            <div class="download-extras">
+              <a
+                href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-Linux.deb"
+                class="extra-btn"
+                download
+                >.deb</a
+              >
+              <a
+                href="https://github.com/SandwichEater577/Valyxo/releases/latest/download/Valyxo-Linux.rpm"
+                class="extra-btn"
+                download
+                >.rpm</a
+              >
+              <a
+                href="https://github.com/SandwichEater577/Valyxo/releases"
+                target="_blank"
+                class="extra-btn"
+                >All Releases</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="source-code-link">
+          <a href="https://github.com/SandwichEater577/Valyxo" target="_blank">
+            View source code on GitHub →
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>&copy; 2025 Michał Kostkowski. All rights reserved.</div>
+    </footer>
+    <script>
+      document.querySelectorAll(".os-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remove active from all tabs and panels
+          document
+            .querySelectorAll(".os-tab")
+            .forEach((t) => t.classList.remove("active"));
+          document
+            .querySelectorAll(".os-panel")
+            .forEach((p) => p.classList.remove("active"));
+
+          // Add active to clicked tab and corresponding panel
+          tab.classList.add("active");
+          document.getElementById(tab.dataset.os).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
