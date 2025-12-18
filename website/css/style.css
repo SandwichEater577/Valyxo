@@ -761,12 +761,23 @@ main {
 .feature-icon {
   font-size: 2.5rem;
   margin-bottom: 16px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.4s ease;
 }
 
+.feature-icon svg {
+  stroke: var(--text-primary);
+  opacity: 0.85;
+}
+
 .feature-card:hover .feature-icon {
-  transform: scale(1.2) rotate(-5deg);
+  transform: scale(1.1);
+}
+
+.feature-card:hover .feature-icon svg {
+  opacity: 1;
 }
 
 .feature-card h3 {
