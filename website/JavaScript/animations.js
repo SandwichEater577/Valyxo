@@ -49,8 +49,8 @@ const createMouseGlow = () => {
   });
 
   function animate() {
-    glowX += (mouseX - glowX) * 0.1;
-    glowY += (mouseY - glowY) * 0.1;
+    glowX += (mouseX - glowX) * 0.15;
+    glowY += (mouseY - glowY) * 0.15;
     glow.style.left = glowX + "px";
     glow.style.top = glowY + "px";
     requestAnimationFrame(animate);
