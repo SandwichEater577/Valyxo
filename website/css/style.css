@@ -1474,6 +1474,10 @@ footer::before {
   flex-shrink: 0;
 }
 
+.tech-item img[alt="Electron"] {
+  filter: brightness(1.5);
+}
+
 .tech-item span {
   font-size: 0.9rem;
   color: var(--text-secondary);
