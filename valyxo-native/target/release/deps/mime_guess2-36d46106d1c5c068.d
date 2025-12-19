@@ -1,0 +1,13 @@
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\mime_guess2-36d46106d1c5c068.d: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\impl_bin_search.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\mime_types.rs C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\mime_guess2-9c2caabdeb69e3dc\out\mime_types_generated.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\libmime_guess2-36d46106d1c5c068.rlib: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\impl_bin_search.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\mime_types.rs C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\mime_guess2-9c2caabdeb69e3dc\out\mime_types_generated.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\libmime_guess2-36d46106d1c5c068.rmeta: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\impl_bin_search.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\mime_types.rs C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\mime_guess2-9c2caabdeb69e3dc\out\mime_types_generated.rs
+
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\lib.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\impl_bin_search.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\mime_guess2-2.3.1\src\mime_types.rs:
+C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\mime_guess2-9c2caabdeb69e3dc\out\mime_types_generated.rs:
+
+# env-dep:MIME_TYPES_GENERATED_PATH=\\mime_types_generated.rs
+# env-dep:OUT_DIR=C:\\Users\\MichalStanistalKostk\\Documents\\VS Code 2025-2026\\Valyxo\\valyxo-native\\target\\release\\build\\mime_guess2-9c2caabdeb69e3dc\\out

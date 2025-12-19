@@ -1,0 +1,26 @@
+COMMAND:
+python
+
+HOW TO USE:
+python
+
+EXAMPLE:
+python
+>>> x = 42
+>>> print(x)
+>>> exit()
+
+DESCRIPTION:
+Launch embedded Python interactive console.
+
+LANGUAGE:
+System
+
+NOTES:
+Full access to Python stdlib.
+
+WARNINGS:
+Use exit() not Ctrl+C to exit.
+
+SEE ALSO:
+man enter ValyxoScript, man run

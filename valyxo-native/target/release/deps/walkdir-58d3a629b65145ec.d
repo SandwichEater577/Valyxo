@@ -1,0 +1,10 @@
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\walkdir-58d3a629b65145ec.d: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\dent.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\error.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\util.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\libwalkdir-58d3a629b65145ec.rlib: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\dent.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\error.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\util.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\libwalkdir-58d3a629b65145ec.rmeta: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\dent.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\error.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\util.rs
+
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\lib.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\dent.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\error.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\walkdir-2.5.0\src\util.rs:

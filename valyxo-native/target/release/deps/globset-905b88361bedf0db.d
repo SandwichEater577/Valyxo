@@ -1,0 +1,10 @@
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\globset-905b88361bedf0db.d: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\fnv.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\glob.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\pathutil.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\libglobset-905b88361bedf0db.rlib: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\fnv.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\glob.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\pathutil.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\libglobset-905b88361bedf0db.rmeta: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\fnv.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\glob.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\pathutil.rs
+
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\lib.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\fnv.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\glob.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\globset-0.4.18\src\pathutil.rs:

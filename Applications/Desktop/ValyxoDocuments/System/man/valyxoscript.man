@@ -1,0 +1,37 @@
+   ███████ ██      ██████   ██████  ███████ ████████ 
+   ██      ██     ██        ██      ██         ██    
+   ███████ ██     ██   ███  ██   ███ ███████   ██    
+        ██ ██     ██    ██  ██    ██      ██   ██    
+   ███████ ███████  ██████   ██████  ███████   ██    
+
+============================================================
+
+COMMAND:
+ValyxoScript
+
+HOW TO USE:
+set <name> = <expr>
+print <expr>
+if [cond] then [cmd] else [cmd]
+vars
+exit
+
+EXAMPLE:
+set x = 5
+print x
+if [x < 10] then [print x] else [print "no"]
+
+DESCRIPTION:
+ValyxoScript is the lightweight language used in Valyxo.
+
+LANGUAGE:
+ValyxoScript
+
+NOTES:
+Expressions are evaluated safely using ast.
+
+WARNINGS:
+Unknown variables raise errors.
+
+SEE ALSO:
+man run, man nano

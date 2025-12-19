@@ -1,0 +1,8 @@
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\displaydoc-b73a7b6b2bc80f88.d: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\attr.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\expand.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\fmt.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\displaydoc-b73a7b6b2bc80f88.dll: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\attr.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\expand.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\fmt.rs
+
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\lib.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\attr.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\expand.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\displaydoc-0.2.5\src\fmt.rs:

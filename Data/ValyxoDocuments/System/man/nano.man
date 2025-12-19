@@ -1,0 +1,23 @@
+COMMAND:
+nano
+
+HOW TO USE:
+nano [filename]
+
+EXAMPLE:
+nano main.vs
+
+DESCRIPTION:
+ValyxoScript-based file editor.
+
+LANGUAGE:
+Editor
+
+NOTES:
+Default language is VS (.vs).
+
+WARNINGS:
+quit discards changes.
+
+SEE ALSO:
+man ValyxoScript, man run

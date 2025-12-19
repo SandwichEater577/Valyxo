@@ -1,0 +1,26 @@
+COMMAND:
+theme
+
+HOW TO USE:
+theme list
+theme set <name>
+
+EXAMPLE:
+theme list
+theme set hacker
+theme set neon
+
+DESCRIPTION:
+Manage Valyxo color themes.
+
+LANGUAGE:
+System
+
+NOTES:
+Available themes: neon, classic, hacker, ocean.
+
+WARNINGS:
+Theme changes apply immediately.
+
+SEE ALSO:
+man settings, man Valyxo

@@ -10,7 +10,8 @@ build/
 .venv
 env/
 venv/
-ValyxoDocuments/
+# ValyxoDocuments/ (disabled to allow .agent folder)
+!ValyxoDocuments/System/man/.agent/
 .DS_Store
 *.swp
 *.swo

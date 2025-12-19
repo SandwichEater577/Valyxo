@@ -1,0 +1,35 @@
+  ██    ██  █████  ██       █████  ██   ██  ██████  
+  ██    ██ ██   ██ ██      ██   ██  ██ ██  ██    ██ 
+  ██    ██ ███████ ██      ███████   ███   ██    ██ 
+  ██    ██ ██   ██ ██      ██   ██   ██    ██    ██ 
+   ██████  ██   ██ ███████ ██   ██   ██     ██████  
+
+============================================================
+
+COMMAND:
+Valyxo
+
+HOW TO USE:
+enter ValyxoScript | enter ValyxoGPT | mkdir | ls | cd | cat | grep | nano | run | jobs | kill | man | settings | -help | quit
+
+EXAMPLE:
+enter ValyxoScript
+mkdir Projects/Demo
+cd Projects/Demo
+nano main.vs
+run main.vs
+
+DESCRIPTION:
+Valyxo is a terminal-based developer environment with ValyxoScript language and ValyxoGPT assistant.
+
+LANGUAGE:
+System
+
+NOTES:
+Files stored under ~/Projects/
+
+WARNINGS:
+Do not upload ValyxoDocuments to public repos.
+
+SEE ALSO:
+man ValyxoScript, man nano, man run

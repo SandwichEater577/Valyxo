@@ -1,0 +1,11 @@
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\glutin_wgl_sys-f84b8124d2dcc85a.d: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\glutin_wgl_sys-0.6.1\src\lib.rs C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\glutin_wgl_sys-6f539ed4c8bbf6ee\out/wgl_bindings.rs C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\glutin_wgl_sys-6f539ed4c8bbf6ee\out/wgl_extra_bindings.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\libglutin_wgl_sys-f84b8124d2dcc85a.rlib: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\glutin_wgl_sys-0.6.1\src\lib.rs C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\glutin_wgl_sys-6f539ed4c8bbf6ee\out/wgl_bindings.rs C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\glutin_wgl_sys-6f539ed4c8bbf6ee\out/wgl_extra_bindings.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\libglutin_wgl_sys-f84b8124d2dcc85a.rmeta: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\glutin_wgl_sys-0.6.1\src\lib.rs C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\glutin_wgl_sys-6f539ed4c8bbf6ee\out/wgl_bindings.rs C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\glutin_wgl_sys-6f539ed4c8bbf6ee\out/wgl_extra_bindings.rs
+
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\glutin_wgl_sys-0.6.1\src\lib.rs:
+C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\glutin_wgl_sys-6f539ed4c8bbf6ee\out/wgl_bindings.rs:
+C:\Users\MichalStanistalKostk\Documents\VS\ Code\ 2025-2026\Valyxo\valyxo-native\target\release\build\glutin_wgl_sys-6f539ed4c8bbf6ee\out/wgl_extra_bindings.rs:
+
+# env-dep:OUT_DIR=C:\\Users\\MichalStanistalKostk\\Documents\\VS Code 2025-2026\\Valyxo\\valyxo-native\\target\\release\\build\\glutin_wgl_sys-6f539ed4c8bbf6ee\\out

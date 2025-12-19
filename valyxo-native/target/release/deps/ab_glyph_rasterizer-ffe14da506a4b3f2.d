@@ -1,0 +1,9 @@
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\ab_glyph_rasterizer-ffe14da506a4b3f2.d: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\geometry.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\raster.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\libab_glyph_rasterizer-ffe14da506a4b3f2.rlib: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\geometry.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\raster.rs
+
+C:\Users\MichalStanistalKostk\Documents\VS Code 2025-2026\Valyxo\valyxo-native\target\release\deps\libab_glyph_rasterizer-ffe14da506a4b3f2.rmeta: C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\lib.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\geometry.rs C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\raster.rs
+
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\lib.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\geometry.rs:
+C:\Users\MichalStanistalKostk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ab_glyph_rasterizer-0.1.10\src\raster.rs:

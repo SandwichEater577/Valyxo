@@ -1,0 +1,24 @@
+COMMAND:
+run
+
+HOW TO USE:
+run <filename> [&]
+
+EXAMPLE:
+run main.vs
+run worker.vs &
+
+DESCRIPTION:
+Execute a ValyxoScript file. '&' launches as background job.
+
+LANGUAGE:
+System
+
+NOTES:
+Background jobs cannot accept interactive input.
+
+WARNINGS:
+Long-running jobs must be killed with kill <id>.
+
+SEE ALSO:
+man jobs, man nano
