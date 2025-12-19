@@ -1,6 +1,6 @@
 [package]
 name = "valyxo-native"
-version = "0.5.2"
+version = "0.6.0"
 edition = "2021"
 authors = ["NesTea"]
 description = "Native Rust backend for Valyxo - High-performance file operations, terminal, and more"

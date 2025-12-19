@@ -1,6 +1,6 @@
 {
   "name": "valyxo-native",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Native Rust backend for Valyxo desktop app",
   "main": "index.js",
   "types": "index.d.ts",

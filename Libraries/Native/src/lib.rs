@@ -28,7 +28,7 @@ pub fn init_native_backend() -> Result<String> {
     
     tracing::info!("Valyxo Native Backend initialized");
     
-    Ok("Valyxo Native Backend v0.5.2 ready".to_string())
+    Ok("Valyxo Native Backend v0.6.0 ready".to_string())
 }
 
 /// Get version info
